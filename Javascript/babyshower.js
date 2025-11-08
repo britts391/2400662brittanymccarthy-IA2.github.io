@@ -15,17 +15,17 @@
 
 /* 
    (IA#2 Question 2a: DOM Manipulation)
-   • Demonstrates correct use of DOM functions:
+   â€¢ Demonstrates correct use of DOM functions:
        - getElementById() to access input and error message elements
        - Dynamically updating text content in the DOM for validation
 
    (IA#2 Question 2c: Form Validation / Input Handling)
-   • Validates that the user enters required backdrop text.
-   • Displays and clears error messages dynamically.
+   â€¢ Validates that the user enters required backdrop text.
+   â€¢ Displays and clears error messages dynamically.
  
    (IA#2 Question 2d: Basic Interactivity / Logic)
-   • Checks login state and calculates totals.
-   • Uses control structures (if / else) and arithmetic operations.
+   â€¢ Checks login state and calculates totals.
+   â€¢ Uses control structures (if / else) and arithmetic operations.
   
 */
 
@@ -36,7 +36,7 @@ function addToCart(themeName, price, textInputId, errorId) {
     var errorMsg = document.getElementById(errorId);
     var babyText = babyTextInput.value.trim(); // trim is use to remove extra spaces
 
-    // Step 2: Input Validation — Ensure backdrop text is entered
+    // Step 2: Input Validation â€” Ensure backdrop text is entered
     // (IA#2 2c - Form Validation)
     if (!babyText) {
         // If the field is empty, show an error message dynamically
@@ -69,7 +69,7 @@ function addToCart(themeName, price, textInputId, errorId) {
     cart[username].push({
         theme: themeName,      // The chosen theme name (e.g  Baby Bear )
         price: price,          // The cost of the package
-        backdropText: babyText,// The user’s custom backdrop text
+        backdropText: babyText,// The userâ€™s custom backdrop text
         category: "Baby Shower"// Added category label for identification
     });
 
@@ -87,9 +87,9 @@ function addToCart(themeName, price, textInputId, errorId) {
 
 /* 
    (IA#2 Question 2d: Basic Interactivity / Logic)
-   • Function demonstrates correct use of control structures and
+   â€¢ Function demonstrates correct use of control structures and
      arithmetic operations.
-   • Uses Array.reduce() to compute total cost dynamically.
+   â€¢ Uses Array.reduce() to compute total cost dynamically.
   
 */
 
@@ -112,8 +112,8 @@ function calculateTotal(username) {
 
 /* 
    (IA#2 Question 3a: Integration & Presentation)
-   • This JS file interacts with HTML through function calls (e.g., buttons).
-   • Keeps HTML semantic and free from inline code.
-   • Works with external CSS and HTML for organized, modular design.
+   â€¢ This JS file interacts with HTML through function calls (e.g., buttons).
+   â€¢ Keeps HTML semantic and free from inline code.
+   â€¢ Works with external CSS and HTML for organized, modular design.
    
 */

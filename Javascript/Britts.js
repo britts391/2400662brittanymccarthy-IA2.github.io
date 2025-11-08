@@ -10,9 +10,9 @@
 
 /*
    (IA#2 Question 2a: DOM Manipulation)
-   • Demonstrates correct use of DOM functions such as
+   â€¢ Demonstrates correct use of DOM functions such as
      querySelector() to access and manipulate HTML elements.
-   • Dynamically updates the DOM and CSS properties in response
+   â€¢ Dynamically updates the DOM and CSS properties in response
      to user actions (e.g., hover effects on text).
    */
 
@@ -49,11 +49,11 @@ document.querySelector(".heading h1").addEventListener("mouseout", function () {
 
 /* 
    (IA#2 Question 2b: Event Handling)
-   • Demonstrates at least two working event listeners and
+   â€¢ Demonstrates at least two working event listeners and
      their respective handlers:
         1. Logo click shows alert message.
         2. Heading hover changes text color and style.
-   • Uses appropriate event types: click, mouseover, and mouseout.
+   â€¢ Uses appropriate event types: click, mouseover, and mouseout.
     */
 
 
@@ -69,7 +69,8 @@ function logout() {
 
     // (IA#2 Question 2a & 2d)
     // Dynamic DOM-based redirection to the login page.
-    window.location.href = "../Codes/Login.html";
+    window.location.href = "Login.html";
 }
+
 
 

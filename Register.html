@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+    Name: Brittany McCarthy
+    ID: 2400662
+    Class: Friday UE2 7-9
+    Description: This is the Register Page for the “Slay by Britts” website.
+    Purpose: Allows users to create an account by entering their personal details and password.
+    Features:
+      • Form validation (via HTML5 and JavaScript)
+      • Password visibility toggle
+      • External CSS and JS file integration
+      • Responsive and accessible layout
+-->
+
+<html lang="en">
+<head>
+    <!-- Character encoding ensures proper display of text -->
+    <meta charset="UTF-8" />
+
+    <!-- Makes page responsive for all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title appears in the browser tab -->
+    <title>Register Page</title>
+
+    <!-- External icon stylesheet from Font Awesome for button icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- External CSS file that styles the register page -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/register.css" />
+</head>
+
+<body>
+    <!-- Website Logo (aligned left) -->
+    
+        <img src="../Assets/Logo.png"  class="logo " alt="Image not found" height="100" width="100" align="left" />
+    
+
+    <!-- Heading section with bounce animation (defined in CSS) -->
+    <div class="heading">
+        <h1>Register Now !!!</h1>
+    </div>
+
+    <!-- Container using Flexbox to align the form properly -->
+    <div class="flex-container">
+
+        <!-- Left section holds the registration form -->
+        <div class="form-section">
+            <h2>Please to input into the following:</h2>
+
+            <!-- Registration Form -->
+            <form>
+                <!-- Grouping name fields in one row -->
+                <div class="row">
+                    <div class="field">
+                        <!-- Label for First Name input -->
+                        <label for="FirstName">First Name</label>
+                        <input type="text" id="FirstName" placeholder="First name" required maxlength="30">
+                    </div>
+
+                    <div class="field">
+                        <label for="LastName">Last Name</label>
+                        <input type="text" id="LastName" placeholder="Last name" required maxlength="30">
+                    </div>
+                </div>
+
+                <!-- Email and Username inputs -->
+                <div class="row">
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Email" maxlength="50" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="username">Create User name</label>
+                        <input type="text" id="username" placeholder="Username" required>
+                    </div>
+                </div>
+
+                <!-- Password creation and confirmation fields -->
+                <div class="row">
+                    <div class="field">
+                        <label for="password">Create Password</label>
+                        <input type="password" id="password" required><br />
+                        <!-- Checkbox calls togglePassword() function to show/hide password -->
+                        <input type="checkbox" onclick="togglePassword('password')"> Show
+                    </div>
+
+                    <div class="field">
+                        <label for="confirmPassword">Re-enter Password</label>
+                        <input type="password" id="confirmPassword" required><br />
+                        <input type="checkbox" onclick="togglePassword('confirmPassword')"> Show
+                    </div>
+                </div>
+
+                <!-- Button Section -->
+                <div class="buttons">
+                    <button type="button" onclick="save()">Save <i class="fa fa-save"></i></button>
+                    <!--
+                        - type="button" prevents form submission until validated.
+                        - onclick="save()" triggers the save() function in register.js.
+                        - <i> tag adds Font Awesome save icon.
+                    -->
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 Slay by Britts</p>
+    </footer>
+
+    <!-- Linking external JavaScript files -->
+    <!-- register.js handles form validation and data saving -->
+    <script src="../Javascript/register.js"></script>
+
+    <!-- Britts.js may contain shared site-wide functionality (e.g., togglePassword) -->
+    <script src="../Javascript/Britts.js"></script>
+    
+</body>
+</html>

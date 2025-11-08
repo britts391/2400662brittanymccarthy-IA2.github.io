@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+     Name: Brittany McCarthy
+     ID: 2400662
+     Class: Friday UE2 7-9
+     
+    
+     This page displays all baby shower packages available
+     from Slay by Britts. Users can:
+       • View product descriptions and images
+       • Enter custom backdrop text
+       • Add selected packages to their cart
+
+   
+   
+-->
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Ensures text is displayed correctly using UTF-8 encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Makes the page responsive to fit any device width (mobile, tablet, desktop) -->
+    <!-- Linking external CSS stylesheet for consistent design across pages.
+         IA#2 Question 3a: Integration & Presentation
+         Ensures all visual styling is external (no inline CSS except small color tweaks). -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/babyshower.css" />
+
+    <title>Baby Shower Package</title><!-- Title that appears in the browser tab -->
+</head>
+
+<body>
+
+    <!-- Company logo with alt text for accessibility.
+         The class 'logo' is referenced by JavaScript in Britts.js for event handling.
+         IA#2 3b: User Experience & Accessibility (alt text included)
+         IA#2 2b: Event Handling (click event listener on logo) -->
+    <img src="../Assets/Logo.png" alt="image not found" class="logo" height="100" width="100" />
+
+    <!-- Main heading for the page; targeted by JavaScript hover effects (Britts.js).
+         IA#2 2a: DOM Manipulation – dynamically changes color and style on hover. -->
+    <div class="heading">
+        <h1>Baby Shower Packages<span class="rotate_emoji">&#129328;</span></h1>
+    </div>
+
+    <!--
+         MAIN CONTENT AREA
+        -->
+    <main>
+
+        <!-- Logout button triggers logout() function from Britts.js -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+
+        <!--
+             NAVIGATION BAR SECTION
+
+             Provides internal and external links for navigation.
+             IA#2 3b: User Experience – clean and accessible navigation.
+        -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="SlayByBritts.html">Home<span class="rotate_emoji">&#127969;</span></a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="cart.html" target="_blank">View cart <span class="rotate_emoji">&#x1f6d2;</span> </a></li> <!-- Opens in a new tab -->
+            </ul>
+        </nav>
+
+
+
+        <div id="products">
+
+            <!--
+             1. BABY BEAR PACKAGE
+            -->
+            <div class="baby1">
+
+                <h2>Baby Bear</h2>
+
+                <h3>Description</h3>
+                <p>
+                    Our Baby Bear baby shower package is one of the best ways to celebrate your expected bundle of joy.
+                    This package features a bear theme with 300 brown, cream, and nude color balloons.
+                    It also includes a huge teddy bear, an arch backdrop with words of your choice, and a photographer to capture these precious moments.
+                </p>
+
+                <!-- Gallery section displays product visuals.
+                Includes multiple images and a short video. -->
+                <div class="gallery">
+                    <img src="../Assets/bearbabyshower1.jpg" alt="baby bear shower setup">
+                    <img src="../Assets/babybearshower1.jpg" alt="bear theme balloon arrangement">
+                    <img src="../Assets/bearbabyshower2.jpg" alt="bear theme arch backdrop">
+                    <video width="300" height="300" controls>
+                        <source src="../Assets/bearbabyshower4.mp4" type="video/mp4">
+                        Error loading video
+                    </video>
+                </div>
+
+                <!-- Product price and form for adding custom backdrop text. -->
+                <p>Price: $70,000 JMD</p>
+
+                <!--
+                FORM VALIDATION (IA#2 2c)
+                The form requires the user to enter custom backdrop text.
+                Validation handled by addToCart() in babyshower.js.
+                getElementById() and textContent used to dynamically show error messages.
+                -->
+
+                <form id="themeForm">
+                    <label for="text-bear">Backdrop Text:</label>
+                    <input type="text" id="text-bear" placeholder="We can bearly wait!" maxlength="30" />
+                    <p id="error-bear" style="color:red;"></p> <!-- Error message area -->
+                    <!-- Button calls addToCart() function -->
+                    <button type="button" style="background-color:#A0522D;"
+                            onclick="addToCart('Baby Bear', 70000, 'text-bear', 'error-bear')">
+                        Add to Cart
+                    </button>
+                </form>
+            </div>
+
+
+            <!--
+             2. WINNIE THE POOH PACKAGE
+            -->
+            <br /><br /> <div class="winnie">
+                <h2>Winnie the Pooh Baby Shower</h2>
+                <h3>Description</h3>
+                <p>
+                    Our Winnie the Pooh baby shower theme is a must-have to celebrate your soon-to-arrive little honeybee.
+                    This delightful package includes 300 balloons, a charming arch backdrop with custom wording of your choice,
+                    and playful cutouts of beloved Winnie the Pooh characters to bring the magic to life.
+                </p>
+
+                <div class="gallery">
+                    <img src="../Assets/winniebabyshower1.jpg" alt="Winnie theme baby shower">
+                    <img src="../Assets/winniebabyshower2.jpg" alt="Pooh arch backdrop">
+                    <img src="../Assets/winniebabyshower3.jpg" alt="Decorative Pooh setup">
+                </div>
+
+                <p>Price: $60,000 JMD</p>
+
+                <!-- Form and validation area -->
+                <form id="themeForm">
+                    <label for="text-winnie">Backdrop Text:</label>
+                    <input type="text" id="text-winnie" placeholder="Waiting on our honey" maxlength="30" />
+                    <p id="error-winnie" style="color:red;"></p>
+
+                    <button type="button"
+                            onclick="addToCart('Baby Winnie', 60000, 'text-winnie', 'error-winnie')">
+                        Add to Cart
+                    </button>
+                </form>
+            </div>
+
+
+            <!--
+            3. GREEN BABY SHOWER PACKAGE
+             -->
+            <br /><br />   <div class="greenshower">
+                <h2>Green Baby Shower Theme</h2>
+                <h3>Description</h3>
+                <p>
+                    Our Green Baby Shower theme is perfect for those who appreciate simplicity with a touch of elegance.
+                    This beautifully curated package celebrates your baby's arrival in a calm, minimal style.
+                    It features 300 balloons in shades of green and brown, a stunning arch backdrop with your custom wording,
+                    balloon boxes that spell “BABY”, and a simple, stylish chair to complete the look.
+                </p>
+
+                <div class="gallery">
+                    <img src="../Assets/greenbabyshower.jpg" alt="Green theme baby shower">
+                    <img src="../Assets/greenbabyshower1.jpg" alt="Balloon arrangement for green baby shower">
+                    <img src="../Assets/greenbabyshower2.jpg" alt="Backdrop green theme">
+                </div>
+
+                <p>Price: $60,000 JMD</p>
+
+                <!-- Form input validation and cart functionality -->
+                <form id="themeForm">
+                    <label for="text-green">Backdrop Text:</label>
+                    <input type="text" id="text-green" placeholder="Waiting on our bundle of joy" maxlength="30" />
+                    <p id="error-green" style="color:red;"></p>
+
+                    <button type="button" style="background-color:#556B2F;"
+                            onclick="addToCart('Baby Green', 60000, 'text-green', 'error-green')">
+                        Add to Cart
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!--
+         FOOTER SECTION
+         -->
+    <footer>
+        <p>&copy; 2025 Slay by Britts</p>
+    </footer>
+
+    <!--
+         SCRIPT SECTION
+
+         Linking JavaScript files at the bottom ensures HTML is fully loaded
+         before scripts run. This prevents null errors when using DOM selectors.
+    
+
+   
+   <!-- IA#2 Question 3a: Integration & Presentation
+    • All JS files are external and properly linked.
+    • Britts.js → Handles shared logic (logout, logo events)
+    • babyshower.js → Handles cart & form validation
+    -->
+    <script src="../Javascript/Britts.js"></script>
+    <script src="../Javascript/babyshower.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+
+Name: Brittany McCarthy
+ID: 2400662
+Class: Friday UE2 7-9
+
+
+This HTML page provides the Sign-In (Login) interface for users.
+It links to an external CSS file for styling and a JavaScript file
+for validation and authentication logic.
+
+
+-->
+<html>
+<head>
+    <!-- Character encoding and responsiveness -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Page Title -->
+    <title>Sign In Page</title>
+
+    <!-- (IA#3a: Integration) Link to external stylesheet for presentation -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/signin.css" />
+</head>
+
+
+<body>
+    <!-- (IA#3b: Accessibility) Company logo with alt text for screen readers -->
+    <div class="logo">
+        <img src="../Assets/Logo.png" class="logo" alt="Image not found" height="100" width="100" align="left" />
+    </div>
+
+    <!-- Page heading section -->
+    <div class="heading">
+        <h1>Sign In</h1>
+    </div>
+
+    <!-- Flex container to center content responsively -->
+    <div class="flex-container">
+
+        <!-- FORM SECTION -->
+       
+        <div class="form-section">
+            <h2>Please input the following details:</h2>
+
+            
+            <form>
+
+                <div class="row">
+                    <!-- Username Field -->
+                    <div class="field">
+                        <!-- (IA#3b: Accessibility) Label linked to input -->
+                        <label for="Username">Enter Username:</label>
+                        <!-- Input field accessed by JS via getElementById("username") -->
+                        <input type="text" id="username" placeholder="Username" required>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="field">
+                        <label for="password">Enter Password:</label>
+                        <!-- Input field for password entry -->
+                        <input type="password" id="password" required>
+
+                        <!-- (IA#2b: Event Handling) Checkbox triggers JS function to toggle password visibility -->
+                        <input type="checkbox" onclick="togglePassword('password')"> Show
+                    </div>
+                </div>
+
+              
+                <!-- BUTTONS: Trigger JS Functions -->
+                
+                <div class="buttons">
+                    <!-- (IA#2b: Event Handling) Button calls login() when clicked -->
+                    <button type="button" onclick="login()">Login</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <!-- FOOTER SECTION -->
+   
+    <footer class="footer">&copy; 2025 Slay by Britts</footer>
+
+    <!-- (IA#3a: Integration) Link to external JavaScript file -->
+    <!-- This file contains validation, event handling, and login logic -->
+    <script src="../Javascript/signin.js"></script>
+    <script src="..//Javascript/britts.js"></script>
+</body>
+</html>

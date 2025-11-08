@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+
+Name: Brittany McCarthy
+ID: 2400662
+Class: Friday UE2 7-9
+
+This webpage allows customers to create and submit their own
+custom package request for Slay By Britts. It uses a form that
+collects customer details, preferred colors, budget, event info,
+and custom package requests.
+
+
+-->
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <!-- Ensures text is displayed  correctly across all browsersusing UTF-8 encoding -->
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Makes the layout responsive by adapting the width to the user's device.
+         "initial-scale=1" ensures proper zoom level when first loaded. -->
+
+    <title>Custom Package</title>
+    <!-- Sets the title of the browser tab. -->
+
+    <!-- External icon stylesheet for the "Save" icon used on the button. -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Links to the external CSS file that styles this specific page. -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/custom.css" />
+</head>
+
+
+<body>
+    <!--Logo-->
+    
+        <img src="../Assets/Logo.png" alt="Image not found"height="100"  class="logo" width="100" align="left" />
+    
+
+    <!--  Heading -->
+    <div class="heading">
+        <h1>Customize your own package</h1>
+    </div>
+    <main>
+        <!--  LOGOUT BUTTON  -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+        <!-- Button triggers the logout() function defined in Britts.js. -->
+        <!-- NAVIGATION   -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="SlayByBritts.html">Homes<span class="rotate_emoji">&#127969;</span></a></li>
+                <!-- Navigates to the home page (main dashboard). -->
+
+                <li><a href="cart.html" target="_blank">View cart <span class="rotate_emoji">&#x1f6d2;</span> </a></li> <!-- external section -->
+                <!-- Opens the cart page in a new tab for convenience. -->
+            </ul>
+        </nav>
+
+        <!--MAIN CONTENT  -->
+        <div class="flex-container">
+            <!-- This container holds the form and aligns it using Flexbox . -->
+            <!--  FORM SECTION  -->
+            <div class="form-section">
+                <h2>Custom Package</h2>
+
+                <!-- Introduction paragraph describing purpose of the form -->
+                <p>
+                    Didn’t see anything you like, or are the others too expensive or basic?
+                    No worries! At Slay By Britts, we create custom packages for everyone.
+                    Fill out this form below and we will contact you via email with your
+                    personalized package price and details. You may also call us at
+                    (876) 989-8907.
+                </p>
+
+                <h3>Please input the following:</h3>
+
+
+                <form>
+                    <!-- Each row groups two related fields side by side. -->
+                    <!-- Row 1: Name fields -->
+                    <div class="row">
+                        <div class="field">
+                            <label for="FirstName">First Name</label>
+                            <input type="text" id="FirstName" placeholder="First name" required maxlength="30">
+                            <!-- 'required' ensures this field cannot be empty -->
+                        </div>
+
+                        <div class="field">
+                            <label for="LastName">Last Name</label>
+                            <input type="text" id="LastName" placeholder="Last name" required maxlength="30">
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Email and Occasion -->
+                    <div class="row">
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Email" maxlength="50" required>
+                            <!-- Type 'email' adds browser level email validation -->
+                        </div>
+
+                        <div class="field">
+                            <label for="occasion">Occasion</label>
+                            <input type="text" id="occasion" placeholder="Birthday" required>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Color and Contact -->
+                    <div class="row">
+                        <div class="field">
+                            <label for="colours">What colours do you want for your theme?</label>
+                            <input type="text" id="colours" placeholder="Pink and white" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="contact">Contact information</label>
+                            <input type="tel" id="contact" placeholder="(876)899-9078" required>
+
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Budget and Details -->
+                    <div class="row">
+                        <div class="field">
+                            <label for="budget">What's your ideal budget?</label>
+                            <input type="text" id="budget" placeholder="60,000 JMD" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="details">What would you like to include in your package?</label>
+                            <input type="text" id="details" placeholder="Heart balloons, flowers, arch..." required>
+                        </div>
+                    </div>
+
+                    <!-- Row 5: Date and Duration -->
+                    <div class="row">
+                        <div class="field">
+                            <label for="date">When is your event?</label>
+                            <input type="date" id="date" required>
+                            <!-- 'type=date' gives users a date picker -->
+                        </div>
+
+                        <div class="field">
+                            <label for="duration">How long is your event?</label>
+                            <input type="text" id="duration" placeholder="1 hour" required>
+                        </div>
+                    </div>
+
+                    <!--  FORM BUTTONS-->
+                    <div class="buttons">
+                        <!-- Button triggers save() function in custom.js -->
+                        <button type="button" onclick="save()">
+                            Save and Send <i class="fa fa-save"></i>
+                            <!-- The <i> tag adds a save icon using Font Awesome -->
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!--FOOTER SECTION  -->
+    <footer class="footer">
+        &copy; 2025 Slay by Britts
+       
+    </footer>
+
+    
+    <!-- custom.js: handles saving form input, validation, and submission logic -->
+    <script src="../Javascript/custom.js"></script>
+
+    <!-- Britts.js: contains shared functions like logout() used across pages -->
+    <script src="../Javascript/Britts.js"></script>
+</body>
+</html>

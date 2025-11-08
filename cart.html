@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--
+    Name: Brittany McCarthy
+    ID: 2400662
+    Class: Friday UE2 7-9
+
+   
+   
+    This webpage displays the user's shopping cart for "Slay by Britts".
+    It uses JavaScript to dynamically load items stored in localStorage
+    and allows users to remove items, clear the cart, or proceed to checkout.
+
+    IA#2 Demonstrated Skills:
+    ---------------------------------
+    a) HTML Structure & Semantics — proper use of <header>, <main>, <footer>
+    b) External Linking — CSS, JavaScript files, and image
+    c) DOM Interaction — via onload="loadCartPage()" calling a JS function
+    d) Reusability & User Interface — consistent layout, navigation, and branding
+-->
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--
+        Ensures the page uses UTF-8 character encoding,
+        allowing special symbols and emojis to display correctly.
+    -->
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!--
+        Makes the webpage responsive on all screen sizes
+        (phones, tablets, and desktops).
+    -->
+
+    <title>Your Cart</title>
+    <!--
+         browser tab title 
+        
+    -->
+    <!--
+        External CSS Linking
+        Demonstrates: IA#2 — External Resource Linking
+        
+    -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/cart.css" />
+</head>
+
+<body onload="loadCartPage()">
+    <!--
+        onload Event Attribute
+        Calls the JavaScript function loadCartPage() from cart.js
+        once the webpage fully loads.
+        IA#2(b): Event Handling — triggers JS logic automatically.
+    -->
+    <!--
+        Brand Logo
+        Displays company logo at top left of page.
+        Uses inline alignment to position visually beside header content.
+    -->
+    <img src="../Assets/Logo.png"class="logo"alt="Image not found"height="100"width="100" align="left" /> 
+
+    <!--
+        Page Heading Section
+        Contains the title "Your Cart" styled via external CSS.
+       
+    -->
+    <div class="heading">
+        <h1> Cart</h1>
+    </div>
+
+    <!--
+        MAIN SECTION
+        
+    -->
+    <main>
+
+        <!--
+            Logout Button
+            Allows user to end their session.
+            Uses onclick event to trigger logout() function from Britts.js
+            IA#2(b): Event Handling and Function Linking.
+        -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+
+        <!--
+            Navigation Bar
+            Provides quick access to other pages such as Home.
+            Demonstrates use of <nav> and list structure for navigation menus.
+        -->
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="SlayByBritts.html">
+                        Home
+                        <span class="rotate_emoji">&#127969;</span>
+                        <!--
+                            Emoji animated using CSS class rotate_emoji.
+                        -->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--
+            CART CONTAINER
+            Wraps all cart content — table, total, and buttons.
+            Used for styling and responsive layout (Flex/Grid in CSS).
+        -->
+        <div class="cart-container">
+            <h1>Your Cart</h1>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <!--
+                            Table Headings — Defines columns for all product attributes.
+                            Select = Checkbox for deleting or updating items.
+                            Category, Theme, etc. display stored information from localStorage.
+                        -->
+                        <th>Select</th>
+                        <th>Category</th>
+                        <th>Theme</th>
+                        <th>Custom Text</th>
+                        <th>Number Balloon</th>
+                        <th>Quantity</th>
+                        <th>Price (JMD)</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <!--
+                    Table Body (Dynamic Section)
+                    ID cartItems acts as a DOM hook for JavaScript.
+                    JS function loadCartPage() will use:
+                    document.getElementById("cartItems").innerHTML = ...
+                    to populate  rows dynamically based on what the  user add to their cart.
+                -->
+                <tbody id="cartItems">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+
+            <!--
+                Total Price Section
+               display total that is calculated by java script in Britts.js based on the items user adds in cart.
+                ID allows DOM manipulation with document.getElementById("totalPrice") to get .
+            -->
+            <h2 id="totalPrice">Total: $0 JMD</h2>
+
+            <!--
+                Action Buttons Section
+                Contains checkout and clear cart options.
+                Each button calls a JS function to perform related task.
+                IA#2(b): Event Handling + DOM Interaction.
+            -->
+            <div class="actions">
+                <button type="button" onclick="goToCheckout()">Go to Checkout</button>
+                <button tyoe="button "onclick="clearCart()">Clear Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <!--
+        FOOTER SECTION
+        Provides copyright.
+        Consistent with other site pages for branding.
+       
+    -->
+    <footer class="footer">
+        &copy; 2025 Slay by Britts
+    </footer>
+
+    <!--
+        External JavaScript Linking
+        1. cart.js — handles cart data loading, manipulation, and total calculations
+        2. Britts.js — contains shared functions like logout() 
+      
+    -->
+    <script src="../Javascript/cart.js"></script>
+    <script src="../Javascript/Britts.js"></script>
+
+</body>
+</html>

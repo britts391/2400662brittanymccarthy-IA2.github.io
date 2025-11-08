@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+Name: Brittany McCarthy
+ID: 2400662
+Class: Friday UE2 7-9
+
+
+This HTML file represents the “Login Page” for the Slay by Britts website.
+It connects to an external CSS file for styling (Login.css) and includes JavaScript
+for interactivity (login.js). T.
+-->
+<html>
+<head>
+    <meta charset="UTF-8" /> <!-- Ensures the page supports special characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Makes page responsive on all screen sizes -->
+    <title>Login Page</title> <!-- Page title displayed on browser tab -->
+    <!-- External CSS link for styling (uses variables for color and theme consistency) -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/Login.css">
+</head>
+
+<body>
+    <!-- Main container: holds all content and ensures structured page layout (Flexbox controlled in CSS) -->
+    <div class="container">
+        <div id="logo">
+            <!-- Logo image aligned to the left (brand identity, consistent on all pages) -->
+            <img src="../Assets/Logo.png"  alt="image not found" class="logo" />
+        </div>
+        <!-- Main content area -->
+        <main class="login-box">
+            <!-- Heading section introducing user to login page -->
+            <div class="heading">
+                <h1>Hi welcome to Slay by Britts</h1>
+            </div>
+
+            <!--
+                Two interactive buttons that trigger JavaScript functions.
+                Demonstrates event handling (onclick events) for IA2 requirement:
+                - "signin()" function will direct users to login validation.
+                - "Register()" function redirects users to registration page.
+            -->
+            <button type="button" onclick="signin()">Sign in</button>
+            <button type="button" onclick="Register()">Register</button>
+        </main>
+
+        <!-- Footer section for branding and ownership -->
+        <footer class="footer">&copy; 2025 Slay by Britts</footer>
+    </div>
+
+    <!-- JavaScript link for interactive functionality (e.g., button actions, validations) -->
+    <script src="../Javascript/login.js"></script>
+    <script src="../Javascript/Britts.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+

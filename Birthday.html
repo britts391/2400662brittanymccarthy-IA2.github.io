@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<!-- Name: Brittany McCarthy
+     ID: 2400662
+     Class: Friday UE2 7-9
+-->
+<!--
+
+
+This HTML page, titled "Birthday Package", showcases different birthday
+decoration packages offered by "Slay by Britts". The page includes
+Basic, Kids, and Extravagant packages, each with themed images,
+videos, descriptions, and pricing.
+
+-->
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Ensures text is displayed correctly using UTF-8 encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Makes the page responsive to fit any device width (mobile, tablet, desktop) -->
+    <!-- Linking external CSS stylesheet for styling the entire page -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/birthday.css" />
+
+
+
+    <title>Birthday Package</title><!-- Title that appears in the browser tab -->
+</head>
+
+
+<body>
+
+    <!--  logo class for java event handler  -->
+    <img src="../Assets/Logo.png" alt="image not found" class="logo" height="100" width="100" />
+
+    <!-- Heading section styled using CSS class 'heading' -->
+    <div class="heading">
+        <h1>Birthday Packages<span class="rotate_emoji">&#127874;</span></h1>
+    </div>
+
+    <main>
+        <!-- Logout button calls the JavaScript function 'logout()' when clicked -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+
+        <!-- Navigation bar section styled with class 'navbar' -->
+        <nav class="navbar">
+            <ul>
+                <!-- Internal and external navigation links -->
+                <li><a href="SlayByBritts.html">Homes<span class="rotate_emoji">&#127969;</span></a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="cart.html" target="_blank">View cart <span class="rotate_emoji">&#x1f6d2;</span> </a></li> <!-- Opens in a new tab -->
+            </ul>
+        </nav>
+
+        <!--
+            Basic birthday package section
+             -->
+        <div id="products">
+            <h2>Basic Birthday Package</h2>
+
+            <h3>Description</h3>
+            <p>
+                This entails a Backdrop of your choice with an arch,
+                100 balloons in your color scheme, tablecloth, number balloon,
+                birthday chair and table. Includes delivery, setup, and takedown costs.
+            </p>
+
+            <!-- Gallery div uses CSS class 'gallery' to format images -->
+            <h3>Pink theme</h3>
+            <div class="gallery">
+                <img src="../Assets/Pinkbdaytheme.jpg" alt="image not found">
+                <img src="../Assets/Pinkbdaytheme1.jpg" alt="image not found">
+                <img src="../Assets/Pinkbdaytheme2.jpg" alt="image not found">
+                <img src="../Assets/Pinkbdaythem3.jpg" alt="image not found">
+            </div>
+
+            <h3>Purple theme</h3>
+            <div class="gallery">
+                <img src="../Assets/Purplebdaytheme1.jpg" alt="image not found">
+                <img src="../Assets/Purplebdaytheme2.jpg" alt="image not found">
+                <img src="../Assets/Purplebdaytheme3.jpg" alt="image not found">
+                <img src="../Assets/Birthdaychair.jpg" alt="image not found">
+            </div>
+
+            <h3>Burgundy theme</h3>
+            <div class="gallery">
+                <img src="../Assets/Burgandybdaytheme1.jpg" alt="image not found">
+                <img src="../Assets/Burgandybdaytheme2.jpg" alt="image not found">
+                <img src="../Assets/Burgandybdaytheme3.jpg" alt="image not found">
+                <img src="../Assets/Birthdaychair.jpg" alt="image not found">
+            </div>
+
+            <h3>Black theme</h3>
+            <div class="gallery">
+                <img src="../Assets/Blackbdaytheme1.jpg" alt="image not found">
+                <img src="../Assets/Blackbdaytheme2.jpg" alt="image not found">
+                <img src="../Assets/Blackbdaytheme3.jpg" alt="image not found">
+                <img src="../Assets/Birthdaychair.jpg" alt="image not found">
+            </div>
+
+            <p>Price: $40,000 JMD</p>
+
+            <!-- Form to select theme  validated by JS in birthday.js -->
+            <form id="themeForm">
+                <label>Choose Theme (only one):</label><br />
+                <input type="checkbox" name="theme" value="Pink"> Pink
+                <input type="checkbox" name="theme" value="Black"> Black
+                <input type="checkbox" name="theme" value="Burgundy"> Burgundy
+                <input type="checkbox" name="theme" value="Purple"> Purple
+                <p id="themeError" style="color:red;"></p><!--validation check in java script if wrong will display error message in p tag as red-->
+                <!-- User input for number balloon -->
+                <label for="numberballon">Choose Number for Balloon:</label>
+                <input type="number" id="numberballon" placeholder="22">
+                <p id="numberError" style="color:red;"></p><!--validation check in java script if wrong will display error message in p tag as red-->
+                <!-- JS function call: 'handleAddToCart(this)' -->
+                <button onclick="handleAddToCart(this)">Add to Cart</button>
+            </form>
+        </div>
+
+        <!--
+             KIDS birthday package  section
+             -->
+        <div id="products1">
+            <h2>Kids Birthday Package</h2>
+
+            <!-- Each theme uses .gallery for layout styling -->
+            <h3>Princess Theme</h3>
+            <p>
+                Includes 100 balloons, princess cutouts, mascot, number balloon, and castle cutout.
+            </p>
+            <div class="gallery">
+                <img src="../Assets/princesstheme1.jpg" alt="image not found">
+                <img src="../Assets/princesstheme2.jpg" alt="image not found">
+                <img src="../Assets/princesstheme3.jpg" alt="image not found">
+                <video width="300" height="300" controls>
+                    <source src="../Assets/princesstheme0.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <h3>Paw Patrol Theme</h3>
+            <p>Includes balloons, cutouts, mascot, and number balloon.</p>
+            <div class="gallery">
+                <img src="../Assets/pawPatroltheme1.jpg" alt="image not found">
+                <img src="../Assets/pawPatroltheme2.jpg" alt="image not found">
+                <img src="../Assets/pawPatroltheme4.jpg" alt="image not found">
+                <video width="300" height="300" controls>
+                    <source src="../Assets/pawPatroltheme3.mp4" type="video/mp4">
+                    Error loading video.
+                </video>
+            </div>
+
+            <h3>Dinosaur Theme</h3>
+            <p>Includes dinosaur cutouts, mascot, balloons, and number balloon.</p>
+            <div class="gallery">
+                <img src="../Assets/Dinosaurtheme1.jpg" alt="image not found">
+                <img src="../Assets/Dinosaurtheme2.jpg" alt="image not found">
+                <img src="../Assets/Dinosaurtheme3.jpg" alt="image not found">
+            </div>
+
+            <h3>Unicorn Theme</h3>
+            <p>Includes unicorn cutout, mascot, balloons, and number balloon.</p>
+            <div class="gallery">
+                <img src="../Assets/unicorntheme1.jpg" alt="image not found">
+                <img src="../Assets/unicorntheme2.jpg" alt="image not found">
+                <img src="../Assets/unicorntheme3.jpg" alt="image not found">
+                <img src="../Assets/unicorntheme4.jpg" alt="image not found">
+            </div>
+
+            <p>Price: $60,000 JMD</p>
+
+            <!-- Second theme selection form -->
+            <form id="themeForm">
+                <label>Choose Theme (only one):</label><br />
+                <input type="checkbox" name="theme" value="Princess"> Princess
+                <input type="checkbox" name="theme" value="Pawpatrol"> Paw Patrol
+                <input type="checkbox" name="theme" value="Dinosaur"> Dinosaur
+                <input type="checkbox" name="theme" value="Unicorn"> Unicorn
+                <p id="themeError" style="color:red;"></p><!--validation check in java script if wrong will display error message in p tag as red-->
+                <label for="numberballon">Choose Number for Balloon:</label>
+                <input type="number" id="numberballon" placeholder="22">
+                <p id="numberError" style="color:red;"></p><!--validation check in java script if wrong will display error message in p tag as red-->
+                <!-- JS function call: 'handleAddToCart(this)' -->
+                <button onclick="handleAddToCart(this)">Add to Cart</button>
+            </form>
+        </div>
+
+        <!--
+             Extravagant birthday section
+             -->
+        <div id="extravagant">
+            <h2>Extravagant Birthday Package</h2>
+            <p>
+                Offers deluxe setups with themes in pink, purple, and black/gold.
+                Includes professional photography, balloon arches, and LED signs.
+            </p>
+
+            <h3>Pink Theme</h3>
+            <div class="gallery">
+                <img src="../Assets/extrapinktheme1.jpg" alt="image not found">
+                <img src="../Assets/extrapinktheme2.jpg" alt="image not found">
+                <img src="../Assets/extrapinktheme3.jpg" alt="image not found">
+            </div>
+
+            <h3>Purple Theme</h3>
+            <div class="gallery">
+                <img src="../Assets/purpleextrabday1.jpg" alt="image not found">
+                <img src="../Assets/purpleextrabday2.jpg" alt="image not found">
+                <img src="../Assets/purpleextrabday3.jpg" alt="image not found">
+            </div>
+
+            <h3>Black and Gold Theme</h3>
+            <div class="gallery">
+                <img src="../Assets/blackandgoldextra.jpg" alt="image not found">
+                <img src="../Assets/blackandgoldextra2.jpg" alt="image not found">
+                <img src="../Assets/blackandgoldextra3.jpg" alt="image not found">
+            </div>
+
+            <p>Price: $70,000 JMD</p>
+
+            <!-- Theme selection form -->
+            <form id="themeForm">
+                <label>Choose Theme (only one):</label><br />
+                <input type="checkbox" name="theme" value="ExtraPink"> Pink
+                <input type="checkbox" name="theme" value="ExtraPurple"> Purple
+                <input type="checkbox" name="theme" value="ExtraBlack"> Black and Gold
+                <p id="themeError" style="color:red;"></p>
+
+
+                <label for="numberballon">Choose Number for Sign:</label>
+                <input type="number" id="numberballon" placeholder="22">
+                <p id="numberError" style="color:red;"></p>
+
+                <!-- JS function call: 'handleAddToCart(this)' -->
+                <button onclick="handleAddToCart(this)">Add to Cart</button>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2025 Slay by Britts</p>
+    </footer>
+
+    <!-- Linking external JavaScript files -->
+    <!-- Britts.js: handles logout and general functionality -->
+    <!-- birthday.js: handles form validation and add-to-cart logic -->
+    <!--Linking JavaScript files at the bottom ensures HTML is fully loaded
+    before scripts run. This prevents null errors when using DOM selectors.-->
+    <script src="../Javascript/Britts.js"></script>
+    <script src="../Javascript/birthday.js"></script>
+
+</body>
+</html>
+

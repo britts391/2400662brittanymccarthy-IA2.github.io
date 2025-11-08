@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+Name: Brittany McCarthy
+ID: 2400662
+Class: Friday UE2 7-9
+
+
+This HTML file displays all available Wedding Packages on the Slay by Britts website.
+It includes detailed package descriptions, image galleries, and interactive "Add to Cart"
+forms for each package. It integrates JavaScript functionality for cart management and
+uses external CSS for layout and styling.
+
+-->
+<head>
+    <meta charset="UTF-8" />
+    <!-- Ensures text is displayed correctly using UTF-8 encoding -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Makes the page responsive to fit any device width (mobile, tablet, desktop) -->
+
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/wedding.css" />
+    <!-- Links to the external CSS stylesheet for consistent page design and responsive layout -->
+
+    <title>Wedding Package</title>
+    <!-- Title that appears in the browser tab -->
+</head>
+
+
+<body>
+
+    <!-- Logo at the top of the page -->
+    <img src="../Assets/Logo.png" alt="image not found" class="logo" height="100" width="100" />
+
+    <!-- Animated heading box -->
+    <div class="heading">
+        <h1>Wedding Packages <span class="rotate_emoji">&#128146;</span> </h1>
+    </div>
+
+    <main>
+        <!-- Logout button for session handling -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+
+        <!--  navigation -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="SlayByBritts.html">Homes<span class="rotate_emoji">&#127969;</span></a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="cart.html" target="_blank">View cart <span class="rotate_emoji">&#x1f6d2;</span> </a></li>
+                <!-- Opens cart page in a new tab -->
+            </ul>
+        </nav>
+
+        <!-- Product section containing all wedding packages -->
+        <div id="products">
+
+            <!--
+                 PACKAGE 1: Pink Blossom Wedding
+                -->
+            <div class="wedding1">
+
+                <h2>Pink Blossom Wedding</h2>
+
+                <!-- Package description -->
+                <h3>Description</h3>
+                <p>
+                    Our Pink Blossom Wedding is perfect for flower lovers and those dreaming of a simple, intimate celebration.
+                    With this package you can step into a breathtaking floral wonderland designed to enchant your guests and
+                    make your special day unforgettable. This package includes 1,000 artificial flowers, beautifully arranged
+                    throughout your venue, 50 Pink Tablecloths, 60 Pink Curtains, a customized selfie mirror, and a photographer
+                    to capture every moment of your blossoming love story.
+                </p>
+
+                <!-- Gallery of images showing this package -->
+                <div class="gallery">
+                    <img src="../Assets/pinkwedding1.jpg" alt="image not found">
+                    <img src="../Assets/pinkwedding2.png" alt="image not found">
+                    <img src="../Assets/pinkwedding3.jpg" alt="image not found">
+                    <img src="../Assets/pinkwedding4.jpg" alt="image not found">
+                    <img src="../Assets/pinkwedding5.jpg" alt="image not found">
+                </div>
+
+                <!-- Price and custom text input -->
+                <p>Price: $150,000 JMD</p><br>
+
+                <!-- Form for adding this package to the cart -->
+                <form id="themeForm">
+                    <label for="text-mirror">Mirror Text:</label>
+                    <input type="text" id="text-mirror" placeholder="Welcome to our wedding!" maxlength="50" />
+                    <!-- Allows the user to enter a custom message for the mirror -->
+
+                    <p id="error-mirror" style="color:red;"></p>
+                    <!-- Displays validation errors (if input left empty) -->
+
+                    <button type="button" onclick="addToCart('Pink Blossom', 150000, 'text-mirror', 'error-mirror')">
+                        Add to Cart <!--When clicked call the add to cart function in java script which accepts the theme, price , text for mirror or error-->
+                    </button>
+                    <!-- When clicked, triggers addToCart() function in JS -->
+                </form>
+            </div>
+
+            <br /><br /><br />
+
+            <!-- 
+                 PACKAGE 2: Classic Wedding
+                -->
+            <div class="wedding2">
+
+                <h2>Classic Wedding</h2>
+                <h3>Description</h3>
+                <p>
+                    The Classic Wedding package embodies timeless elegance, perfect for those who love traditional white weddings.
+                    It includes 1,000 white artificial flowers, a grand welcome arch backdrop, 70 tablecloths, 50 lanterns,
+                    60 white curtains, and a photographer to capture every precious moment.
+                    Backdrop images will be requested via email after purchase.
+                </p>
+
+                <!-- Gallery-->
+                <div class="gallery">
+                    <img src="../Assets/classicwedding1.jpg" alt="image not found">
+                    <video width="300" height="300" controls>
+                        <source src="../Assets/classicwedding2.mp4" type="video/mp4">
+                        Error loading video
+                    </video>
+                    <img src="../Assets/classicwedding3.jpg" alt="image not found">
+                    <img src="../Assets/classicwedding4.jpg" alt="image not found">
+                </div>
+
+                <!-- Price  -->
+                <p>Price: $190,000 JMD</p><br>
+
+                <form id="themeForm">
+                    <label for="text_backdrop">Backdrop Text:</label>
+                    <input type="text" id="text_backdrop" placeholder="Welcome to our wedding!" maxlength="50" />
+                    <p id="error_backdrop" style="color:red;"></p>
+
+                    <button type="button" onclick="addToCart('Classic Wedding', 190000, 'text_backdrop', 'error_backdrop')">
+                        Add to Cart <!--When clicked call the add to cart function in java script which accepts the theme, price , text backdrop or error-->
+                    </button>
+                </form>
+            </div>
+
+            <br /><br /><br />
+
+            <!-- 
+                 PACKAGE 3: Blinding Lights Wedding
+                  -->
+            <div class="wedding3">
+
+                <h2>Blinding Lights</h2>
+                <h3>Description</h3>
+                <p>
+                    The Blinding Lights Wedding Package is designed for enchanting night celebrations.
+                    It includes 100 white tablecloths, 1,000 lights, 200 candles, 1,000 flowers, a personalized
+                    gallery, two professional photographers, and 70 curtains styled to create a magical atmosphere.
+                </p>
+
+                <!-- Gallery of wedding images -->
+                <div class="gallery">
+                    <img src="../Assets/blindingwedding1.png" alt="image not found">
+                    <img src="../Assets/blindingwedding2.jpg" alt="image not found">
+                    <img src="../Assets/blindingwedding3.jpg" alt="image not found">
+                    <img src="../Assets/blindingwedding4.jpg" alt="image not found">
+                    <img src="../Assets/blindingwedding5.jpg" alt="image not found">
+                </div>
+
+                <p>Price: $250,000 JMD</p><br>
+
+                <!-- Input form for this package -->
+                <form id="themeForm">
+                    <label for="text_gallery">Gallery Text:</label>
+                    <input type="text" id="text_gallery" placeholder="Welcome to our wedding!" maxlength="50" />
+                    <p id="error_gallery" style="color:red;"></p>
+
+                    <button type="button" onclick="addToCart('Blinding Wedding', 250000, 'text_gallery', 'error_gallery')">
+                        Add to Cart
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2025 Slay by Britts</p>
+    </footer>
+
+    <!-- JavaScript links -->
+    <script src="../Javascript/Britts.js"></script>
+    <!-- Handles site-wide features such as logout and user authentication -->
+
+    <script src="../Javascript/wedding.js"></script>
+    <!-- Handles specific package functionality such as addToCart and validation -->
+</body>
+</html>

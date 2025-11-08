@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        
+       
+        This is the "Checkout" page for the Slay by Britts e-commerce website.
+        The page displays the user's selected items in a table, calculates the
+        total cost, collects shipping and payment information, and provides
+        options to cancel, clear, close, or confirm the checkout.
+
+    -->
+    <!-- Character encoding and responsive design for mobile devices -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Page title -->
+    <title>Check out</title>
+
+    <!-- External CSS stylesheet for styling the checkout page -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/checkout.css" />
+</head>
+
+<!--
+    Body loads checkout page dynamically  using JavaScript function loadCheckoutPage()
+-->
+<body onload="loadCheckoutPage()">
+
+    <!-- Company logo displayed at the top of the page -->
+    <img src="../Assets/Logo.png" alt="image not found" class="logo" height="100" width="100" />
+
+    <main>
+        <!-- Page heading -->
+        <div class="heading">
+            <h1>Checkout</h1>
+        </div>
+
+        <!-- Logout button triggers logout function in JavaScript -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+
+        <!-- Main checkout container -->
+        <div class="checkout">
+
+            <!-- Table to display items in user's cart -->
+            <table>
+                <thead>
+                    <tr>
+                        <!-- Table headers for item details -->
+                        <th>Category</th>
+                        <th>Theme</th>
+                        <th>Custom Text</th>
+                        <th>Number Balloon</th>
+                        <th>Quantity</th>
+                        <th>Price (JMD)</th>
+                        <th>Enter event Dates</th>
+                    </tr>
+                </thead>
+                <!-- Table body populated dynamically by JavaScript -->
+                <tbody id="checkoutItems"></tbody>
+            </table>
+
+            <!-- Total cost displayed dynamically -->
+            <h2 id="checkoutTotal">Total: $0 JMD</h2><br />
+
+            <!-- Shipping details form -->
+            <h3>Shipping Details</h3>
+            <form>
+                <!-- Name input field, required for checkout -->
+                <label for="shippingName">Name:</label>
+                <input type="text" id="shippingName" required><br>
+
+                <!-- Address input field, required for shipping -->
+                <label for="shippingAddress">Address:</label>
+                <input type="text" id="shippingAddress" required><br>
+
+                <!-- Read-only input showing the total amount to pay -->
+                <label for="shippingAmount">Amount Being Paid (JMD):</label>
+                <input type="number" id="shippingAmount" readonly><br><br>
+
+                <!-- Payment information section -->
+                <div class="payment-section">
+                    <h3>Payment Information</h3>
+
+                    <!-- Card number input, 16 digits required -->
+                    <label>Card Number: </label>
+                    <input type="text" id="cardNumber" required maxlength="16" minlength="16"><br>
+
+                    <!-- Expiry date input in month format -->
+                    <label>Expiry Date:</label>
+                    <input type="month" id="expiryDate" required><br>
+
+                    <!-- CVV input, 3 digits required -->
+                    <label>CVV:</label>
+                    <input type="text" id="cvv" placeholder="123" maxlength="3" minlength="3" required><br>
+                </div>
+            </form>
+
+            <!-- Action buttons -->
+            <button type="button" onclick="cancelCheckout()">Cancel</button>
+            <button type="button" onclick="clearCheckout()">Clear All</button>
+            <button type="button" onclick="window.close()">Close</button>
+            <button type="button" onclick="confirmCheckout(event)">Confirm Checkout</button>
+
+        </div> <!-- End of checkout div -->
+
+    </main>
+
+    <!-- Footer of the page -->
+    <footer class="footer">&copy; 2025 Slay by Britts</footer>
+
+    <!-- JavaScript files -->
+    <!-- Britts.js: Contains general utility functions (e.g., logout) -->
+    <script src="../Javascript/Britts.js"></script>
+    <!-- checkout.js: Handles dynamic loading of cart items, total calculation, checkout actions -->
+    <script src="../Javascript/checkout.js"></script>
+
+</body>
+</html>
+

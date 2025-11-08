@@ -1,4 +1,4 @@
-﻿/* 
+/* 
 
 Name: Brittany McCarthy
 ID: 2400662
@@ -46,9 +46,21 @@ function validateForm() {
     }
 
     return true;
+
+
+const selectedDate = new Date(date);// ccheck if user puts in correct date
+const today = new Date();
+
+// Remove the time part so comparison is date-only
+today.setHours(0, 0, 0, 0);
+
+if (selectedDate < today) {
+    alert("Please select a valid date — event date cannot be in the past.");
+    return false;
 }
 
-
+return true;
+}
 
 // FUNCTION: save() Save form data to localStorage for logged in user
 function save() {
@@ -84,5 +96,6 @@ function save() {
         localStorage.setItem("users", JSON.stringify(users));
 
         alert("Custom form was successfully saved and sent! We will contact you via email as soon as possible.");
+        document.getElementById("customForm").reset();
     }
 }

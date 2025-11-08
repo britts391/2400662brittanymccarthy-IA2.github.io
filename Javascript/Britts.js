@@ -69,8 +69,9 @@ function logout() {
 
     // (IA#2 Question 2a & 2d)
     // Dynamic DOM-based redirection to the login page.
-    window.location.href = "Login.html";
+    window.location.href = "index.html";
 }
+
 
 
 

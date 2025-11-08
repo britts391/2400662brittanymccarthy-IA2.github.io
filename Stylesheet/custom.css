@@ -73,6 +73,12 @@ body {
 }
 
 
+/*a. CSS Selectors & Styling• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+img { /*element selector*/
+    transition: transform 0.5s ease-in-out; /*allows for images  to transition for 0.5 seconds and the ease-in-out allows for it to be slow at the start speed up in the middle 
+                                              and slow down at the end */
+   
+}
 
 /* 
    Class Selector — .navbar
@@ -326,6 +332,7 @@ footer {
         transform: rotate(360deg);
         cursor: pointer; /* changes cursor to hand pointer */
     }
+
 
 
 

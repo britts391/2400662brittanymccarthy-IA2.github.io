@@ -102,6 +102,7 @@ function save() {
         localStorage.setItem("users", JSON.stringify(users));
 
         alert("Registration successful!");
-        window.location.href = "Login.html"; // Redirect to login page
+        window.location.href = "index.html"; // Redirect to login page
     }
 }
+

@@ -1,0 +1,191 @@
+/* 
+Name: Brittany McCarthy
+ID: 2400662
+Class: Friday UE2 7–9
+
+
+This stylesheet defines the visual layout for the login/register page of “Slay by Britts”.
+It demonstrates IA2 CSS requirements:
+(a) CSS Selectors & Styling — use of element, class, descendant, pseudo-class, ID, etc.
+(b) Layout & Positioning — uses Flexbox for alignment and responsive layout.
+(c) Consistency & Theme — consistent color palette, typography, spacing, and variables.
+*/
+
+/*
+  c. Consistency & Theme — CSS Variables
+  These ensure color, font, and spacing consistency across the page.
+*/
+:root {
+    --main-bg-color: #FFE7E0;
+    --accent-color: #f8a8a8;
+    --hover-color: #e07b7b;
+    --box-bg: #fff6f6;
+    --border-color: #f8a8a8;
+    --font-main: 'Times New Roman', sans-serif;
+    --text-color: #333;
+    --footer-bg: #fff6f6;
+}
+
+/*
+ a. CSS Selectors & Styling — Element selector
+*/
+/* Base styles for the overall page */
+body {
+    margin: 0;
+    font-family: var(--font-main); /* consistent typography */
+    background-color: var(--main-bg-color);
+    min-height: 100vh;
+    display: flex; /* Flexbox used to align layout vertically */
+    flex-direction: column; /* stacks elements vertically */
+}
+
+/*
+ b. Layout & Positioning — Flexbox container
+*/
+/* Class selector: positions and centers login/register sections */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers horizontally */
+    justify-content: flex-start; /* aligns content from top */
+    padding: 20px;
+    width: 100%;
+    position: relative; /* allows absolute-positioned logo to be positioned within */
+}
+/*
+ a. CSS Selectors & Styling — Class selector
+*/
+
+
+/*
+ b. Layout & Positioning — Box model and alignment
+*/
+/* Login box styled with soft colors and shadows */
+.login-box {
+    background-color: var(--box-bg);
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);/*black shadow*/
+    margin-top: 150px; /* pushes box below logo */
+    margin-bottom: 60px; /* adds space before footer */
+}
+
+/*
+ a. CSS Selectors & Styling — Class selector
+*/
+/* Heading area with borders and shadows */
+.heading {
+    display: block;
+    background-color: white;
+    color: var(--text-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/*
+ a. CSS Selectors & Styling — Element selector
+*/
+/* Button styling with pseudo-class hover effect */
+button {
+    padding: 12px 40px;
+    margin: 10px;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    min-width: 130px;
+    transition: background-color 0.3s ease;
+}
+
+    /*
+ a. CSS Selectors & Styling — Element + Pseudo-class selector
+*/
+    button:hover {
+        background-color: var(--hover-color); /* hover color for interactivity */
+    }
+
+/*
+ a. CSS Selectors & Styling — Element selector
+*/
+/* Image transition and zoom effect */
+img {
+    transition: transform 0.5s ease-in-out; /* smooth transition for hover */
+}
+
+    /*
+ a. CSS Selectors & Styling — Pseudo-class selector
+*/
+    img:hover {
+        transform: scale(1.3); /* enlarges image slightly when hovered */
+    }
+
+/*
+ b. Layout & Positioning — Footer section
+*/
+/* Footer styling to stay at bottom with spacing and color */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+    width: 300px;
+}
+#logo {/*id selector */
+    padding: 20px 0 0 40px; /* top, right, bottom, left */
+}
+#logo img {/* dependent selector*/
+    width: 100px;
+    height: auto;
+   position:absolute;
+    top: 20px;
+    left: 40px; /* Adds more space from the edge */
+}
+
+
+
+/*
+ b. Layout & Positioning — Responsive Design
+ Mobile layout (600px)
+*/
+/* Media query for small devices */
+@media (min-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*
+ b. Layout & Positioning — Responsive Design
+ Desktop layout (950px)
+*/
+/* Media query for desktop view */
+@media (min-width: 950px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-box {
+        margin-top: 180px; /* extra spacing on larger screens */
+        max-width: 600px;
+    }
+
+    /* Footer aligned left on desktop */
+    .footer {
+        text-align: left;
+        padding-left: 20px;
+    }
+}

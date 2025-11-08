@@ -1,0 +1,180 @@
+
+
+/* Name Brittany McCarthy
+ID:2400662
+class:Friday UE2 7-9
+*/
+
+/*c. Consistency & Theme
+• Consistent color palette, typography, and spacing across pages, use of variables, etc*/
+/*variables*/
+:root {
+    --main-bg-color: #FFE7E0;
+    --hover-color: #e07b7b;
+    --font-main: 'Times New Roman', Times, serif;
+    --spacing: 30px;
+    --text-color: black;
+}
+
+/*a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+    * universal selector its reseting the margin and padding because each browser is different and may have their own margin and padding by reseting or setting to zero it will
+    start a fresh and use the various margin and padding in divs that way it looks the same on any device.
+
+*/
+* { /*universal selector*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*a. CSS Selectors & Styling• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+
+body { /*element selector*/
+    font-family: var(--font-main);
+    display: flex; /* applies Flexbox layout to the body */
+    flex-direction: column; /* stacks  elements vertically */
+    min-height: 100vh; /* ensures the body takes up at least the full height of the viewport */
+    background-color: var(--main-bg-color);
+    justify-content: flex-start; /* aligns content to the top of the page  question b . Layout & Positioning 
+                                	Effective use of Flexbox/Grid to structure a basic layout. */
+    line-height: 1.8; /* increases vertical spacing between lines of text */
+    letter-spacing: 0.5px; /* adds slight spacing between letters for readability */
+    word-spacing: 2px; /* adds spacing between words for better text flow */
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+
+
+html { /*element selector*/
+
+    scroll-behavior: smooth; /*allows for user to scroll smoothly when on page*/
+}
+
+/*a. CSS Selectors & Styling• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+
+h2 { /*element selector*/
+    text-align: center; /*centers text*/
+    font-style: italic; /* italicize text*/
+}
+/*a. CSS Selectors & Styling• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+/* Heading  class selector */
+.heading {
+    text-align: center; /*centers text*/
+    margin: var(--spacing) auto; /*20px is the top and bottom margin — it adds space above and below the .heading element.auto is the left and right margin — it tells the browser to automatically calculate equal space on both sides, which centers the element horizontally*/
+    border: 2px solid pink; /*border colour*/
+    padding: 10px; /* adds space inside the box awy from margin  */
+    background-color: white;
+    width: 50%;
+}
+
+/*a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+button { /* Buttons element selector */
+    padding: 12px 40px; /* longer buttons */
+    margin: 10px;
+    border: none;
+    background-color: #f8a8a8; /*light pink */
+    color: white; /*text colour on buttons*/
+    font-size: 16px; /*text font size*/
+    cursor: pointer; /*this changes cursor from arrow to hand pointer when button is being hover*/
+    border-radius: 5px; /*allows for buttons to have a curve corner instead of a sharp edge*/
+    min-width: 50px; /* fixed width for buttons */
+    transition: background-color 0.3s ease; /*allows for background colour for button to change by 0.3 seconds */
+}
+    /*a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+    button:hover { /* pseudo class selector*/
+        background-color: var(--hover-color); /*change button colour when hoverd*/
+    }
+footer { /*element selector*/
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 16px;
+    width:100%;
+}
+
+/* b. Layout & Positioning 
+•	Effective use of Flexbox/Grid to structure a basic layout. 
+     Flex Container */
+.flex-container {/*C*/
+    display: flex; /*This turns the element into a flex container.
+                    It enables Flexbox layout, which makes it easier to align and distribute space among child elements.*/
+    justify-content: center;
+    padding: 20px;
+}
+
+ /* Form Section */
+.form-section {/*clASS SELECTOR*/
+    flex: 2; /* allows item  can grow to take up twice  extra space if available in the flex container.*/
+    border: 2px solid pink;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    max-width: 900px;
+    width: 100%;
+}
+
+
+
+ /* Rows and Fields */
+ .row {/*class selector*/
+     display: flex;
+     gap: 10px;/* adds 10 pixels of horizontal spaces between elements */
+     margin-bottom: 15px;
+ }
+
+.field {/*class selector*/
+    flex: 1; /* The element can grow to fill available space in the flex container. */
+    display: flex;
+    flex-direction: column;/* elements are allign vertically instead of horizontally as it normally would*/
+}
+
+     .field label {/*dependent class*/
+         margin-bottom: 5px;
+         font-weight: bold;
+     }
+
+    .field input, .field select, .field textarea { /*dependent class*/
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+
+
+ /* Responsive */
+ @media (max-width: 950px) {
+     .row {
+         flex-direction: column;
+     }
+ }
+
+
+
+ /* Mobile (≤600px) */
+ @media (max-width: 600px) {
+     .flex-container {
+         flex-direction: column; /* Stack everything */
+         padding: 10px;
+     }
+ }
+
+
+
+/*element selectors*/
+img { /*element selector*/
+
+ margin-top: 20px; /* Moves logo down */
+    margin-left: 20px; /* Moves logo away from left edge */
+    max-width: 120px; /* Optional: control logo size */
+transition: transform 0.5s ease-in-out; /*allows for images  to transition for 0.5 seconds and the ease-in-out allows for it to be slow at the start speed up in the middle 
+                                              and slow down at the end */
+}
+
+
+    /*a. CSS Selectors & Styling• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+    img:hover { /*pseudo class selector*/
+        transform: scale(1.3); /* increases the size of the image by 30% when hovered, creating a zoom effect when hover */
+    }

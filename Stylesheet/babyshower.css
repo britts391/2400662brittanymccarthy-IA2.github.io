@@ -1,0 +1,387 @@
+﻿/* 
+   
+   Name: Brittany McCarthy
+   ID: 2400662
+   Class: Friday UE2 7–9
+ 
+   This stylesheet handles all layout, color, typography,
+   and responsive design for Babyshower.html.
+    */
+
+
+/* VARIABLES (IA#2a: Use of CSS Variables)
+  
+   • These variables improve maintainability by centralizing
+     all theme colors, fonts, and reusable values.
+   • Any design change (color/font) can be made here once.
+   */
+:root {
+    --main-font: 'Times New Roman', Times, serif; /* Primary site font */
+    --heading-font: 'Times New Roman', Times, serif; /* Heading font */
+    --main-bg: #E8D5E7; /* Page background color */
+    --primary-color: pink; /* Accent color for borders */
+    --secondary-color: #FFE4E1; /* Soft section background */
+    --hover-color: #D8BFD8; /* Hover color for links */
+    --text-color: black; /* Default text color */
+    --button-bg: #f8a8a8; /* Button background */
+    --button-hover: #e07b7b; /* Button hover color */
+    --border-color: #DDA0DD; /* Border color for product areas */
+    --footer-bg: #f1f1f1; /* Footer background color */
+    --section-padding: 20px; /* Standard padding for sections */
+    --transition-time: 0.3s; /* Standard transition duration */
+    --gallery-shadow: rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Universal selector: sets consistent box sizing and removes default spacing that browser has 2a a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc). */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Element selector for HTML behavior (smooth scrolling across links) a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* Element selector – transition for image hover zoom 
+    a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+*/
+img {
+    transition: transform 0.5s ease-in-out;
+    
+
+
+}
+
+    /* Pseudo-class selector – zoom effect on hover
+        a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+    */
+    img:hover {
+        transform: scale(1.3);
+    }
+
+/*
+   b. LAYOUT & POSITIONING (IA#2b)
+  
+   • Uses Flexbox to create vertical page flow.
+   • Includes responsive @media rules for mobile and desktop.
+  */
+
+body {
+    font-family: var(--main-font);
+    display: flex; /* applies Flexbox layout to the body */
+    flex-direction: column; /* stacks header, main, and footer vertically */
+    min-height: 100vh; /* ensures page fills full height */
+    background-color: var(--main-bg);
+    justify-content: flex-start; /* aligns content to the top of the page */
+    line-height: 1.8; /* increases vertical spacing between lines of text */
+    letter-spacing: 0.5px; /* adds slight spacing between letters for readability */
+    word-spacing: 2px; /* adds spacing between words for better text flow */
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+/* Heading  2 styling 
+     a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+Consistency & Theme
+•	Consistent color palette, typography, and spacing across pages, use of variables, etc
+*/
+h2 {/*element selector*/
+    text-align: center;
+    font-style: italic;
+    font-family: var(--heading-font);
+    color: var(--text-color);
+}
+
+/* PAGE HEADER STYLING 
+    a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc). 
+  Consistency & Theme
+•	Consistent color palette, typography, and spacing across pages, use of variables, etc
+   */
+.heading { /*class selector*/
+    text-align: center;
+    margin: 20px auto;
+    border: 2px solid var(--primary-color);
+    padding: 10px;
+    width: 50%;
+    animation: bounce 1.5s ease-in-out infinite;/*bounce key frame annimation*/
+    background-color: #fff6f6;
+}
+
+/* NAVIGATION BAR STYLING
+ a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).  
+
+   b. Layout & Positioning 
+•	Effective use of Flexbox/Grid to structure a basic layout.
+
+   Demonstrates descendant selectors (.navbar ul, .navbar li)
+   and Flexbox alignment for clean navigation layout.
+  */
+
+.navbar {/*class selector*/
+    background-color: #F6EFF6;
+    padding: 8px;
+    margin-bottom: 20px;
+    font-family: var(--heading-font);
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+}
+
+    .navbar ul { /*decendant selector*/
+        margin: 0; /*default it reset the browser default margin it gives to un orderd list same for padding*/
+        padding: 0;
+        display: inline-block; /*allows navagation elements to beside each other instead of vertically*/
+        
+    }
+
+    .navbar li { /*decendant selector*/
+        text-align: center;
+        display: inline-block; /*allows navagation elements to beside each other instead of vertically*/
+        margin: 0 15px;
+    }
+
+/*  a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+    Consistency & Theme
+•	Consistent color palette, typography, and spacing across pages, use of variables, etc
+    pseudo code clases for Link styling – unvisited, visited, and hover states */
+
+a:link { /*Pesudo code selector*/
+    color: purple;/*this is the colour of hyperlinks if they are not visted*/
+}
+
+a:visited { /*Pesudo code selector*/
+    color: #FF00FF; /*change hyper link colour when link is visted*/
+}
+
+a:hover { /* when ever a link is hover it will change  the background colour and a line over elements  will apper */
+    background-color: var(--hover-color);
+    text-decoration: overline;
+    text-decoration-color: var(--text-color);
+   
+}
+
+/* 
+   PRODUCT SECTIONS 
+   /* a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+    Consistency & Theme
+•	Consistent color palette, typography, and spacing across pages, use of variables, etc
+
+   Each theme has consistent structure but distinct color
+   palettes to differentiate them visually.
+ */
+
+#products {/*ID selector*/
+    background-color: #F5FFFA;
+    color: var(--text-color);
+    padding: 30px;
+    font-size: 20px;
+    border: 2px solid var(--border-color);
+    width: 100%;
+}
+
+/* *a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+    Each section styled with class selectors and distinct colors */
+
+.baby1 {/*class selector*/
+    background-color: #DEB887;
+    color: white;
+    padding: var(--section-padding);
+    font-size: 20px;
+    border: 2px solid #8B4513;
+    width: 100%;
+}
+
+.winnie { /*class selector*/
+    background-color: #E6E6FA;
+    padding: var(--section-padding);
+    font-size: 20px;
+    border: 2px solid #FFC0CB;
+    width: 100%;
+}
+
+.greenshower { /*class selector*/
+    background-color: #8FBC8B;
+    color: white;
+    padding: var(--section-padding);
+    font-size: 20px;
+    border: 2px solid #6B8E23;
+    width: 100%;
+}
+
+/* *a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+   IMAGE & GALLERY SECTION
+  
+   Demonstrates descendant and pseudo-class selectors.
+  */
+
+
+
+/*Gallery layout uses Flexbox for images and videos
+        b. Layout & Positioning 
+•	Effective use of Flexbox/Grid to structure a basic layout. 
+*a. CSS Selectors & Styling• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+/* element  selector  */
+
+
+
+
+.gallery {/*class*/
+    display: flex;
+    flex-wrap: wrap;/* allows images to wrap to next line */
+    justify-content: center;/* centers all images */
+    gap: 15px;/* adds space between them */
+    margin: 20px auto;
+    max-width: 600px;/* keeps the gallery neat and centered */
+}
+
+.gallery img {/*decendant selector */
+    width: 45%;/* two per row */
+    height: auto;
+    border-radius: 8px;/* rounded corners */
+    box-shadow: 0 2px 6px var(--gallery-shadow);
+    transition: transform var(--transition-time) ease;
+}
+
+        /* Subtle zoom effect for interactive feel */
+        .gallery img:hover {/*decendant selector  and pseudo class selector*/
+            transform: scale(1.08);
+        }
+
+/* 
+    /*a. CSS Selectors & Styling
+• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+   c. CONSISTENCY & THEME (IA#2c)
+
+   
+   • Consistent typography and spacing
+   • Reused button and border styles for visual harmony
+   */
+
+/* Button styling shared across all themes for consistency */
+button {/* element selctor*/
+    padding: 12px 40px;
+    margin: 10px;
+    border: none;
+    background-color: var(--button-bg);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    min-width: 130px;
+    transition: background-color var(--transition-time) ease;
+}
+
+    button:hover {
+        background-color: var(--button-hover);
+    }
+
+/* Footer and main layout for consistent spacing */
+main {
+    flex: 1;
+    padding: 16px;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    text-align: center;
+    padding: 16px;
+}
+
+/* 
+   d. CODE QUALITY & RESPONSIVENESS (IA#2d)
+   
+   • Clearly indented, well-commented CSS
+   • Uses media queries for mobile and desktop layout
+   • Avoids redundancy by reusing classes
+    */
+
+/* Responsive Design - Mobile (600px)
+   Stacks nav and gallery for small screens
+    and reduce text size and button size.
+*/
+/*
+b. Layout & Positioning
+• Effective use of Flexbox/Grid to structure a basic layout.
+• Layout adapts logically (e.g., sidebar + content, navbar + main). Mobile and desktop views.
+*/
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 14px; /*reduce text size on smaller screens*/
+        padding: 10px;
+        overflow-x: hidden; /* prevents horizontal scrolling */
+    }
+
+    button {
+        font-size: 14px; /*reduce button  text  on small screen*/
+        padding: 10px 20px;
+        min-width: 80%; /*reduce button size on small screens*/
+    }
+
+
+    nav {
+        flex-direction: column;
+    }
+
+    .gallery img {
+        width: 100%; /* stack images on small screens */
+    }
+}
+/* Desktop layout (950px) */
+@media (min-width: 950px) {
+    body {
+        max-width: 950px; /*does not allow styes or body to strech wider than 950*/
+        margin: 0 auto; /*centers body*/
+    }
+}
+
+
+
+/*
+   ANIMATION SECTION
+   
+   Adds bounce animation to headings for interactive feel.
+   Demonstrates @keyframes usage.
+   */
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 
+   (IA#2a: pseudo  class)
+   
+   animation for emoji to rotate 360 degrees when hovered
+    */
+.rotate_emoji { /* class selector */
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+}
+
+    .rotate_emoji:hover { /* descendant + pseudo-class selector */
+        transform: rotate(360deg);
+        cursor: pointer; /* changes cursor to hand pointer */
+    }

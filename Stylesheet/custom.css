@@ -1,0 +1,331 @@
+﻿/*
+   Name: Brittany McCarthy
+   ID: 2400662
+   Class: Friday UE2 7-9
+   FILE: custom.css
+
+  
+   Styles the “Custom Package” page of the Slay by Britts website.
+   Demonstrates CSS knowledge per IA#2 requirements:
+   a) CSS Selectors & Styling — element, class, id, descendant, pseudo-class
+   b) Layout & Positioning — Flexbox, responsive media queries
+   c) Consistency & Theme — variables, fonts, color palette
+   d) CSS Code Quality — indentation, commenting, no redundancy
+   */
+
+
+/* 
+   (c) Consistency & Theme
+   Using CSS Variables for color palette, font, and spacing
+  */
+:root {
+    --main-bg-color: #E8D5E7;
+    --accent-color: #f8a8a8;
+    --hover-color: #e07b7b;
+    --navbar-bg: #F6EFF6;
+    --text-color: black;
+    --heading-bg: #fff6f6;
+    --section-border: pink;
+    --font-main: 'Times New Roman', serif;
+    --spacing: 20px;
+}
+
+
+/* 
+   (a) CSS Selectors & Styling — Universal Selector
+   Reset default margins/paddings to ensure consistent layout
+   */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 
+   (a) Element Selector — html
+   Enables smooth scrolling behavior
+ */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* 
+    a) CSS Selectors & Styling — element, class, id, descendant, pseudo-class
+   b) Layout & Positioning — Flexbox, responsive media queries
+   c) Consistency & Theme — variables, fonts, color palette
+    Element Selector — body
+   Applies Flexbox layout, consistent font, and global theme
+    */
+body {
+    font-family: var(--font-main);
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+
+
+/* 
+   Class Selector — .navbar
+     
+    a) CSS Selectors & Styling — element, class, id, descendant, pseudo-class
+   b) Layout & Positioning — Flexbox, responsive media queries
+   c) Consistency & Theme — variables, fonts, color palette
+   
+
+  */
+.navbar {
+    background-color: var(--navbar-bg);
+    padding:8px;
+    margin-bottom: var(--spacing);
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: 16px;
+    justify-content: center;
+}
+
+    .navbar ul {/*decendant selector */
+        list-style-type: square;
+        margin: 0;
+        padding: 0;
+        display: inline-block; /* Horizontal menu */
+    }
+
+    .navbar li { /*decendant selector */
+        text-align: center;
+        display: inline-block;
+        margin: 0 15px;
+    }
+
+
+/* 
+   (a) Pseudo-Class Selector — Links
+   Controls link colours, visited colours, and hover effects
+   */
+a:link {
+    color: purple;
+}
+
+a:visited {
+    color: #FF00FF;
+}
+
+a:hover {
+    background-color:  #D8BFD8;
+    text-decoration: overline;
+    text-decoration-color: black;
+}
+
+
+/*  (a) CSS Selectors & Styling
+   Class Selector — .heading
+    Demonstrates use of animation for visual appeal
+   */
+.heading {
+    text-align: center;
+    margin: 20px auto;
+    border: 2px solid pink;
+    padding: 10px;
+    width: 50%;
+    background-color: var(--heading-bg);
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+
+
+
+
+/* 
+   (b) Layout & Positioning — Flex Container
+   Centers the form on the page
+   */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+/* 
+ a) CSS Selectors & Styling — element, class, id, descendant, pseudo-class
+   b) Layout & Positioning — Flexbox, responsive media queries  */
+.form-section {/*class selctor*/
+    flex: 2;
+    border: 2px solid pink;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    max-width: 900px;
+    width: 100%;
+    font-family: var(--font-main);
+    font-size: 16px;
+}
+
+h2 {/*element selector*/
+    margin-bottom: 15px;
+    text-align: center;
+    font-style: italic;
+}
+
+
+/* 
+    a) CSS Selectors & Styling — element, class, id, descendant, pseudo-class
+   b) Layout & Positioning — Flexbox, responsive media queries
+   Use Flexbox to align input fields side-by-side
+    */
+.row { /*class selctor*/
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.field { /*class selctor*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+    .field label { /*decendant selctor*/
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .field input, /*decendant selctors*/
+    .field select,
+    .field textarea {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+        /* Specific style for the Logout button (smaller and left-aligned) */
+main {
+    flex: 1; /*allows item expands to take up as much space as possible, sharing space equally with other items that also have flex: 1.*/
+    padding: 16px;
+}
+
+/*a) CSS Selectors & Styling — element, class, id, descendant, pseudo-class
+   
+    Element Selector — Buttons
+ */
+button {
+    padding: 12px 40px;
+    margin: 10px;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    min-width: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover {/*pseudo code selector*/
+        background-color: var(--hover-color);/*change colour when button is hover*/
+    }
+
+
+/* 
+   (b) Layout & Positioning — Responsive Adjustments
+   Adjust layout and font size for small and large screens
+ */
+
+/* Mobile (600px) */
+@media (max-width: 600px) {
+
+    body {
+        font-size: 14px; /*reduce text size on smaller screens*/
+        padding: 10px;
+        overflow-x: hidden; /* prevents horizontal scrolling */
+    }
+
+    button {
+        font-size: 14px; /*reduce button  text  on small screen*/
+        padding: 10px 20px;
+        min-width: 80%; /*reduce button sixe on small screens*/
+    }
+
+
+    nav {
+        flex-direction: column;
+    }
+
+    .gallery img {
+        width: 100%; /* stack images on small screens */
+    }
+    .flex-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+  
+}
+/* Desktop layout (950px) */
+@media (min-width: 950px) {
+    body {
+        max-width: 950px; /*does not allow styes or body to strech wider than 950*/
+        margin: 0 auto; /*centers body*/
+    }
+ 
+
+}
+
+
+
+/* 
+  a) CSS Selectors & Styling — element, class, id, descendant, pseudo-class
+ 
+    Element Selector — footer
+  
+  */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 16px;
+    
+}
+
+/*
+   ANIMATION SECTION
+   
+   Adds bounce animation to headings for interactive feel.
+   Demonstrates @keyframes usage.
+   */
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/*a. CSS Selectors & Styling• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).
+   (IA#2a: pseudo  class)
+   
+   animation for emoji to rotate 360 degrees when hovered
+    */
+.rotate_emoji { /* class selector */
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+}
+
+    .rotate_emoji:hover { /* descendant + pseudo-class selector */
+        transform: rotate(360deg);
+        cursor: pointer; /* changes cursor to hand pointer */
+    }
+
+
+

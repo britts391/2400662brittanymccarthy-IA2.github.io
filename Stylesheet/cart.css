@@ -1,0 +1,270 @@
+﻿/* Name: Brittany McCarthy
+   ID: 2400662
+   Class: Friday UE2 7–9
+*/
+
+/* 
+   c. Consistency & Theme
+   Consistent color palette, typography, and spacing
+   across all pages using :root variables
+ */
+:root {
+    --main-bg-color: #E8D5E7;
+    --accent-color: #f8a8a8;
+    --hover-color: #e07b7b;
+    --heading-bg: #FFE4E1;
+    --section-bg: #FBEAF5;
+    --section-border: #DDA0DD;
+    --font-main: 'Times New Roman', Times, serif;
+    --spacing: 30px;
+    --text-color: black;
+    --link-hover-bg: #D8BFD8; /* Thistle color */
+    --link-visited: #FF00FF;
+    --link-default: purple;
+    --navbar-bg: #F6EFF6;
+    --gallery-shadow: rgba(0, 0, 0, 0.15); /*rgba(0, 0, 0, 0.15) means: Red = 0  Green = 0  Blue = 0 this combination gives black because all color channels are zero. 
+                                            0.15 refers to the level of transparency 0.15 will give a light shadow*/
+}
+
+
+/* 
+   a. CSS Selectors & Styling
+   Universal selector — resets default browser styling
+   for consistent layout across all devices
+ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth scrolling for a polished browsing experience */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 
+   a. CSS Selectors & Styling
+   Body element — uses Flexbox layout, color variables,
+   and consistent typography defined in :root
+ */
+body {
+    font-family: var(--font-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--main-bg-color);
+    justify-content: flex-start;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+/* 
+   a. CSS Selectors & Styling
+   Headings are centered and italicized
+ */
+h1, h2 {
+    text-align: center;
+    font-style: italic;
+}
+
+/* 
+   b. Layout & Positioning
+   Navigation bar styled using Flexbox for responsive design
+   Class selector used with descendant selectors
+ */
+.navbar {
+    background-color: var(--navbar-bg);
+    padding: 0.5rem 0;
+    margin-bottom: 20px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+}
+
+    .navbar ul {
+        list-style-type: square;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        margin: 0 15px;
+    }
+
+/* 
+   a. CSS Selectors & Styling
+   Pseudo-classes for interactive link styling
+- */
+a:link {
+    color: var(--link-default);
+}
+
+a:visited {
+    color: var(--link-visited);
+}
+
+a:hover { /* pseudo-class selector */
+    background-color: var(--link-hover-bg);
+    text-decoration: underline;
+    text-decoration-color: black;
+    color: black;
+}
+
+/* 
+   a. CSS Selectors & Styling
+   Animated heading section using @keyframes
+   Demonstrates CSS animation requirement
+ */
+.heading { /*class selector */
+    text-align: center;
+    margin: 20px auto;
+    border: 2px solid var(--accent-color);
+    padding: 10px;
+    background-color: var(--heading-bg);
+    width: 50%;
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 
+   a. CSS Selectors & Styling
+   IA#2a: pseudo-class + descendant selector
+   Emoji rotates 360° when hovered
+ */
+.rotate_emoji { /*Class selector*/
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+}
+
+    .rotate_emoji:hover { /*pseudo class and  descendant selector */
+
+        transform: rotate(360deg);
+        cursor: pointer;
+    }
+
+/* 
+   a. CSS Selectors & Styling
+   Buttons styled with variable colors & hover effect
+  */
+button { /*element selector*/
+    padding: 12px 40px;
+    margin: 10px;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    min-width: 130px;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover { /*pseudo class selector*/
+        background-color: var(--hover-color);
+    }
+
+/* 
+   b. Layout & Positioning
+   Cart container centers content using margin auto
+   with a consistent border and background
+ */
+.cart-container {
+    font-family: var(--font-main);
+    font-size: 14px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--accent-color);
+}
+
+/* 
+   b. Layout & Positioning
+   Table structure for cart layout
+  
+ */
+table { /* element selector*/
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td { /*element selector*/
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th { /*element selector*/
+    background-color: var(--accent-color);
+    color: white;
+}
+
+#cartItems tr, /*dependent class selector*/
+thead th {
+    transition: background-color 0.3s ease; /* contols the speed at which background colour for table head, row and heading changes. */
+}
+
+/* Buttons container aligned center */
+.actions {
+    text-align: center;
+}
+
+/* 
+   a. CSS Selectors & Styling
+   Footer styled to remain consistent across pages
+ */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* 
+   b. Layout & Positioning
+   Responsive Design: adjusts layout for mobile devices
+ */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+        overflow-x: hidden;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+        min-width: 80%;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+}
+
+/* 
+   b. Layout & Positioning
+   Desktop layout: limits body width and centers it
+ */
+@media (min-width: 950px) {
+    body {
+        max-width: 950px;
+        margin: 0 auto;
+    }
+}

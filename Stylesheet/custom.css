@@ -79,6 +79,10 @@ img { /*element selector*/
                                               and slow down at the end */
    
 }
+  /*a. CSS Selectors & Styling• Correct use of at least 5 different selectors (element, class, id, descendant, pseudo-class, etc).*/
+  img:hover { /*pseudo class selector*/
+      transform: scale(1.3); /* increases the size of the image by 30% when hovered, creating a zoom effect when hover */
+  }
 
 /* 
    Class Selector — .navbar
@@ -332,6 +336,7 @@ footer {
         transform: rotate(360deg);
         cursor: pointer; /* changes cursor to hand pointer */
     }
+
 
 
 

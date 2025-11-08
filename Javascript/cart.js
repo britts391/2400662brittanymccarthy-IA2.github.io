@@ -225,5 +225,6 @@ function goToCheckout() {
 
     localStorage.setItem("checkoutItems", JSON.stringify(selectedItems));
     localStorage.setItem("cart", JSON.stringify(cart));
-    window.location.href = "../Codes/checkout.html";
+    window.location.href = "checkout.html";
+
 }

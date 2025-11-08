@@ -5,15 +5,15 @@ ID: 2400662
 Class: Friday UE2 7-9
 
 This JavaScript file provides functionality for the Login Page of the 
-“Slay by Britts” website. It contains two simple event-driven functions 
+â€œSlay by Brittsâ€ website. It contains two simple event-driven functions 
 that open new windows (or tabs) when users click the "Sign in" or "Register" buttons.
 
 */
 
 /* 
 Function: signin()
-Purpose: Opens the “signin.html” page in a new browser tab.
-Triggered by: The "Sign in" button’s onclick event in the HTML file.
+Purpose: Opens the â€œsignin.htmlâ€ page in a new browser tab.
+Triggered by: The "Sign in" buttonâ€™s onclick event in the HTML file.
 IA2 Match: Demonstrates event handling and function creation.
 */
 function signin() {
@@ -26,8 +26,8 @@ function signin() {
 
 /* 
 Function: Register()
-Purpose: Opens the “Register.html” page in a new browser tab when the user clicks “Register”.
-Triggered by: The "Register" button’s onclick event in the HTML file.
+Purpose: Opens the â€œRegister.htmlâ€ page in a new browser tab when the user clicks â€œRegisterâ€.
+Triggered by: The "Register" buttonâ€™s onclick event in the HTML file.
 IA2 Match: Demonstrates function call in response to a user event.
 */
 function Register() {

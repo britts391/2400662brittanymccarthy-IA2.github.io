@@ -48,6 +48,18 @@ function validateForm() {
         return false;
     }
 
+
+    // Validate phone number (10 digits)
+    contact = contact.replace(/\D/g, ''); // Remove non-digits
+    if (contact.length !== 10) {
+        alert("Phone number must be exactly 10 digits.");
+        return false;
+    }
+
+    return true; // All validations passed
+
+
+
     // IA#2(c): Additional Validation — Ensure that the event date is not in the past.
     // Create a new Date object for the selected date.
     const selectedDate = new Date(date);

@@ -35,7 +35,7 @@ function validateForm() {
     const email = document.getElementById("email").value.trim();
     const occasion = document.getElementById("occasion").value.trim();
     const colours = document.getElementById("colours").value.trim();
-    const contact = document.getElementById("contact").value.trim();
+    let contact = document.getElementById("contact").value.trim();
     const budget = document.getElementById("budget").value.trim();
     const details = document.getElementById("details").value.trim();
     const date = document.getElementById("date").value.trim();
@@ -57,14 +57,11 @@ function validateForm() {
     }
 
    
-    //Validate email ensuring email contains @ and .com
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/;
-    if (!emailPattern.test(data.email)) {
+    if (!emailPattern.test(email)) {  // <── changed data.email → email
         alert("Please enter a valid email address that includes '@' and ends with '.com'.");
         return false;
     }
-    
-
 
 
     // IA#2(c): Additional Validation — Ensure that the event date is not in the past.
@@ -152,3 +149,5 @@ function save() {
         document.getElementById("customForm").reset();
     }
 }
+
+

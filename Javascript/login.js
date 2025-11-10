@@ -17,7 +17,7 @@ Triggered by: The "Sign in" button’s onclick event in the HTML file.
 IA2 Match: Demonstrates event handling and function creation.
 */
 function signin() {
-    window.open("SignIn.html");
+    window.location.href="SignIn.html";
     // window.open() is a built-in JavaScript method that opens a new tab or window.
     // "signin.html" is the target page.
     // "_blank" specifies that it should open in a new tab rather than replacing the current page.
@@ -31,9 +31,10 @@ Triggered by: The "Register" button’s onclick event in the HTML file.
 IA2 Match: Demonstrates function call in response to a user event.
 */
 function Register() {
-    window.open("Register.html");
+    window.location.href="Register.html";
     // Redirects to the registration form page, allowing new users to sign up.
 }
+
 
 
 

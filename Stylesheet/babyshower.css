@@ -114,7 +114,7 @@ h2 {/*element selector*/
     padding: 10px;
     width: 50%;
     animation: bounce 1.5s ease-in-out infinite;/*bounce key frame annimation*/
-    background-color: #fff6f6;
+    background-color: #FFE4E1;
 }
 
 /* NAVIGATION BAR STYLING
@@ -385,3 +385,4 @@ b. Layout & Positioning
         transform: rotate(360deg);
         cursor: pointer; /* changes cursor to hand pointer */
     }
+

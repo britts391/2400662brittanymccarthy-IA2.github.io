@@ -56,7 +56,14 @@ function validateForm() {
         return false;
     }
 
-    return true; // All validations passed
+   
+    //Validate email ensuring email contains @ and .com
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/;
+    if (!emailPattern.test(data.email)) {
+        alert("Please enter a valid email address that includes '@' and ends with '.com'.");
+        return false;
+    }
+    
 
 
 

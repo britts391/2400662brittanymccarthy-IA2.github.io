@@ -183,7 +183,19 @@ function confirmCheckout() {
             return;
         }
     }
-
+ /*  
+    At this point all validation has passed.  
+    Now the confirmation appears BEFORE the checkout is finalized.
+    
+    This confirm() box gives the user a final chance to review  
+    or cancel before the system removes items from the cart.
+    
+     If the user clicks “OK”, confirm() returns true and checkout continues.  
+    iIf the user clicks “Cancel”, confirm() returns false and the function stops.
+ */
+ if (!confirm("are you sure you want to buy the selected items?")) {
+     return; //Stops the checkout process completely if the user selects No.
+ }
     /* Checkout logic: remove items from cart (d. Basic Interactivity / Logic •	Evidence of correct control structures being used.•	Correct arithmetic calculations.*/
 
    var username = localStorage.getItem("currentUser");// Retrieves:Current user entire cart from localStorage 
@@ -241,13 +253,7 @@ function cancelCheckout() {
 
 
 
-// FUNCTION: closeCheckout()
-// :Closes checkout (no data cleared) and returns to cart
-// IA#2(b) Event Handling
 
-function closeCheckout() {
-    window.location.href = "cart.html"; // when clicked will return to cart page
-}
 
 
 // FUNCTION: clearCheckout()
@@ -260,5 +266,6 @@ function clearCheckout() {
     window.location.reload(); // Reload DOM Reloads the current page.
                                //This ensures that any UI elements or scripts that depend on checkoutItems are refreshed and updated.
 }
+
 
 

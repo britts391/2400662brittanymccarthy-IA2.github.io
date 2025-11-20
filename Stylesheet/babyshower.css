@@ -29,7 +29,9 @@
     --footer-bg: #f1f1f1; /* Footer background color */
     --section-padding: 20px; /* Standard padding for sections */
     --transition-time: 0.3s; /* Standard transition duration */
-    --gallery-shadow: rgba(0, 0, 0, 0.15);
+    --gallery-shadow: rgba(0, 0, 0, 0.5);/*rgba(0, 0, 0, 0.5) means: Red = 0  Green = 0  Blue = 0 this combination gives black because all color channels are zero. 
+                                            0.15 refers to the level of transparency 0.5 will give a light shadow*/
+
 }
 
 
@@ -385,4 +387,5 @@ b. Layout & Positioning
         transform: rotate(360deg);
         cursor: pointer; /* changes cursor to hand pointer */
     }
+
 

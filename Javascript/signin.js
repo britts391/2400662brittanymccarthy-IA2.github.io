@@ -132,7 +132,7 @@ function login() {
         // If the user fails 3 times, block further attempts temporarily
         if (attempts >= 3) { // (IA#2d: Conditional Logic)
             alert("Password wrong 3 times. Try again later."); // Inform the user
-            window.location.href = "Login.html"; // Reload login page (IA#3a)
+            window.location.href = "index.html"; // Reload login page (IA#3a)
         }
         else {
             // Otherwise, inform the user how many attempts remain
@@ -140,3 +140,4 @@ function login() {
         }
     }
 }
+

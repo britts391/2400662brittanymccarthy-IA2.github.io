@@ -23,7 +23,7 @@ class:Friday UE2 7-9
     --link-visited: #FF00FF;
     --link-default: purple;
     --navbar-bg: #F6EFF6;
-    --gallery-shadow: rgba(0, 0, 0, 0.15); /*rgba(0, 0, 0, 0.15) means: Red = 0  Green = 0  Blue = 0 this combination gives black because all color channels are zero. 
+    --gallery-shadow: rgba(0, 0, 0, 0.5); /*rgba(0, 0, 0, 0.5) means: Red = 0  Green = 0  Blue = 0 this combination gives black because all color channels are zero. 
                                             0.15 refers to the level of transparency 0.15 will give a light shadow*/
 
 }
@@ -362,6 +362,7 @@ button { /* Buttons element selector */
     button:hover { /* pseudo class selector*/
         background-color: var(--hover-color); /*change button colour when hoverd*/
     }
+
 
 
 

@@ -1,4 +1,5 @@
 ﻿
+
 /* 
 
 Name: Brittany McCarthy
@@ -55,18 +56,25 @@ const themePrices = {
 //   IA#2(d): Basic Logic (calculates totals, uses conditionals)
 
 function handleAddToCart(button) {
-    // --- DOM Manipulation: Find the parent <div> of the clicked button ---
-    const section = button.closest("div");
+ 
+    
+    // Retrieve the currently logged-in user from localStorage.
+    const username = localStorage.getItem("currentUser");
+    if (!username) {
+        alert("User not logged in.");
+        return;
+    } // --- DOM Manipulation: Find the parent <div> of the clicked button ---
+    const section = button.closest("div");//It ensures that when you click a button in one section, you only interact with inputs and errors in that same section.
 
     // --- DOM Selection: Identify all checked checkboxes in this section ---
-    const selectedThemes = section.querySelectorAll('input[name="theme"]:checked');
+    const selectedThemes = section.querySelectorAll('input[name="theme"]:checked');//This selects all checked checkboxes inside the section that have name="theme".
 
     // --- DOM Selection: Get number input field ---
-    const numberInput = section.querySelector('input[type="number"]');
+    const numberInput = section.querySelector('input[type="number"]');//By using section.querySelectorAll(), it limits the search to the specific section where the button was clicked.
 
     // --- DOM Manipulation: Error message <p> tags for validation feedback ---
     const errorMsgTheme = section.querySelector("#themeError");
-    const errorMsgNumber = section.querySelector("#numberError");
+    const errorMsgNumber = section.querySelector("#numberError");//They store references to the error message elements for:Theme validation and  for Number validation 
 
     // FORM VALIDATION  Theme
   
@@ -108,15 +116,7 @@ function handleAddToCart(button) {
     const price = details.price;/* details is the object and price is the property which is being set to store  in constant  price same for category*/
     const category = details.category;
 
-    // ----------------------------
-    // LOCAL STORAGE INTERACTION
-    // ----------------------------
-    // Retrieve the currently logged-in user from localStorage.
-    const username = localStorage.getItem("currentUser");
-    if (!username) {
-        alert("User not logged in.");
-        return;
-    }
+   
 
     // Get existing cart data or create a new object if none exists.
     let cart = JSON.parse(localStorage.getItem("cart")) || {};
@@ -124,9 +124,9 @@ function handleAddToCart(button) {
     // If the user has no cart yet, create an empty array for them.
     if (!cart[username]) cart[username] = [];
 
-    // ----------------------------
+  
     // ADD ITEM TO CART (LOGIC)
-    // ----------------------------
+    
     // Push the new item into the user’s cart array.
     cart[username].push({
         theme,
@@ -144,13 +144,11 @@ function handleAddToCart(button) {
 }
 
 
-// ====================================================================
 // FUNCTION: calculateTotal(username)
-// Purpose: Calculates the total cost of items in the user's cart
-// Requirements:
+//  Calculates the total cost of items in the user's cart
+
 //   IA#2(a): DOM Manipulation (indirect — used for updating user view)
 //   IA#2(d): Basic Logic & Arithmetic Calculation
-// ====================================================================
 
 function calculateTotal(username) {
     // Retrieve the entire cart from localStorage.

@@ -106,8 +106,8 @@ function loadCheckoutPage() {
     //  ADDED 15% TAX HERE 
     
 
-    // Calculate TAX (5%) and Grand Total
-    var tax = total * 0.05;  // 15% Tax
+        // Calculate TAX (5%) and Grand Total
+    var tax = total * 0.05;  //5% Tax
     var grandTotal = total + tax; // Total including tax
 
     // Display subtotal, tax, and grand total
@@ -123,7 +123,6 @@ function loadCheckoutPage() {
     }
 
 }
-
 
 
 // FUNCTION: confirmCheckout()
@@ -287,4 +286,5 @@ function clearCheckout() {
     window.location.reload(); // Reload DOM Reloads the current page.
     //This ensures that any UI elements or scripts that depend on checkoutItems are refreshed and updated.
 }
+
 

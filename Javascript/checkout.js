@@ -27,7 +27,7 @@ function loadCheckoutPage() {
     // Check if a user is logged in
     const username = localStorage.getItem("currentUser");
 
-    // If not logged in → no access
+    // If not logged in  no access
     if (!username) {
         alert("You must be logged in to view your cart.");
         document.getElementById("checkoutItems").innerHTML = "";
@@ -287,3 +287,4 @@ function clearCheckout() {
     window.location.reload(); // Reload DOM Reloads the current page.
     //This ensures that any UI elements or scripts that depend on checkoutItems are refreshed and updated.
 }
+

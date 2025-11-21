@@ -1,4 +1,4 @@
-﻿/* 
+/* 
 
 Name: Brittany McCarthy
 ID: 2400662
@@ -22,11 +22,19 @@ It demonstrates the following IA#2 requirements:
 
 
 
+
 // Function: addToCart()
 // Purpose: Handles adding a wedding package item to the user's cart
 // Triggered by an onclick event in the HTML "Add to Cart" button
 //
 function addToCart(themeName, price, textInputId, errorId) {
+    // Retrieve the currently logged-in user from localStorage.
+    const username = localStorage.getItem("currentUser");
+    if (!username) {
+        alert("User not logged in.");
+        return;
+    } // --- DOM Manipulation: Find the parent <div> of the clicked button ---
+    const section = button.closest("div");
 
     // --- DOM Manipulation ---  (a) DOM Manipulation — Uses getElementById(), querySelector(), and updates HTML dynamically
     // Accesses input and error elements using their IDs passed from HTML.
@@ -45,7 +53,7 @@ function addToCart(themeName, price, textInputId, errorId) {
     }
 
     
-    // CHECK IF USER IS LOGGED IN (Basic Logic — Uses control structures, arithmetic, and data storage)
+    // Check if user is login (Basic Logic — Uses control structures, arithmetic, and data storage)
     
     const username = localStorage.getItem("currentUser");
     if (!username) {
@@ -61,7 +69,7 @@ function addToCart(themeName, price, textInputId, errorId) {
     if (!cart[username]) cart[username] = []; // Create user cart if missing
 
 
-    // ADD ITEM TO USER’S CART ARRAY (Basic Interactivity  (3) Integration & Presentation — Works with external HTML + CSS cleanly  and Basic Logic — 
+    // Add item's to user's cart array (Basic Interactivity  (3) Integration & Presentation — Works with external HTML + CSS cleanly  and Basic Logic — 
     //Uses control structures, arithmetic, and data storage)
     
     cart[username].push({
@@ -72,9 +80,9 @@ function addToCart(themeName, price, textInputId, errorId) {
     });
 
     
-    // SAVE UPDATED CART BACK TO LOCAL STORAGE
+    // Save updated cart to local storage
     
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));// convert to string using JSON.stringify as local storage only store strings
 
   
     // CONFIRMATION FEEDBACK (Basic Interactivity  (3) Integration & Presentation — Works with external HTML + CSS cleanly)
@@ -92,7 +100,7 @@ function addToCart(themeName, price, textInputId, errorId) {
 
 function calculateTotal(username) {
     const cart = JSON.parse(localStorage.getItem("cart")) || {}; /*We use JSON.parse to convert the JSON-formatted string  created by JSON.stringify. stored under the key "cart" into 
-                                                                    the original data structure r java object. */
+                                                                    the original data structure or java object. */
     const userCart = cart[username] || [];// get cart elements stored under the current username if there is none or if cart is empty a null array is created.
    
     // Sum up all prices using Array.reduce()

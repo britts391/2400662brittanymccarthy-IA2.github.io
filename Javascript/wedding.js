@@ -33,15 +33,17 @@ function addToCart(themeName, price, textInputId, errorId) {
     if (!username) {
         alert("User not logged in.");
         return;
-    } // --- DOM Manipulation: Find the parent <div> of the clicked button ---
-    const section = button.closest("div");
+    } 
 
     // --- DOM Manipulation ---  (a) DOM Manipulation — Uses getElementById(), querySelector(), and updates HTML dynamically
     // Accesses input and error elements using their IDs passed from HTML.
     const weddingTextInput = document.getElementById(textInputId);
     const errorMsg = document.getElementById(errorId);
     const weddingText = weddingTextInput.value.trim(); // Remove spaces
-
+    // remove error message when user begins typing
+    weddingTextInput.addEventListener("input", function () {
+        errorMsg.textContent = "";
+    });
   
     // IA#2(c) FORM VALIDATION: Ensure user enters backdrop text
  
@@ -52,15 +54,7 @@ function addToCart(themeName, price, textInputId, errorId) {
         errorMsg.textContent = ""; // Clear error message when input is valid
     }
 
-    
-    // Check if user is login (Basic Logic — Uses control structures, arithmetic, and data storage)
-    
-    const username = localStorage.getItem("currentUser");
-    if (!username) {
-        alert("User not logged in."); // User feedback
-        return;
-    }
-
+ 
   
     // Retrive cart data from local storage by using JSON.parse which convert string into oringal object if no 
     //cart is there it creates cart array. 2d (Basic Logic — Uses control structures, arithmetic, and data storage)
@@ -104,7 +98,7 @@ function calculateTotal(username) {
     const userCart = cart[username] || [];// get cart elements stored under the current username if there is none or if cart is empty a null array is created.
    
     // Sum up all prices using Array.reduce()
-    return userCart.reduce(function (sum, item) {
+    return userCart.reduce(function (sum, item) {//// . reduce returns a single value to array after accumulating result so will increment sum and return a single value at end of array.
         return sum + item.price;
     }, 0);// use zero as the inital number or total to start adding
 }

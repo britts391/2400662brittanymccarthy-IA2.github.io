@@ -1,0 +1,61 @@
+<!Doctype html>
+<!--
+
+Name: Brittany McCarthy
+ID: 2400662
+Class: Friday UE2 7-9
+-->
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <!-- Ensures text is displayed  correctly across all browsersusing UTF-8 encoding -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Makes the layout responsive by adapting the width to the user's device.
+         "initial-scale=1" ensures proper zoom level when first loaded. -->
+
+   
+    <title> Invoice </title>
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/Invoice.css" />
+</head>
+
+<body>
+
+    <img src="../Assets/Logo.png" alt="image not found" height="100" width="100" class="logo" /><!--Logo image with atrributes along with alt which dispaly a message if image is not found -->
+
+
+    <div class="heading">
+        <!--Heading div is being  called here and so would its styling-->
+        <h1>View Your Invoices</h1>
+    </div>
+
+    
+    <main>
+        <!--  LOGOUT BUTTON  -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+        <!-- Button triggers the logout() function defined in Britts.js. -->
+        <!-- NAVIGATION   -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="SlayByBritts.html">Home<span class="rotate_emoji">&#127969;</span></a></li>
+                <!-- Navigates to the home page (main dashboard). -->
+
+                <li><a href="cart.html" target="_blank">View cart <span class="rotate_emoji">&#x1f6d2;</span> </a></li> <!-- external section -->
+                <!-- Opens the cart page in a new tab for convenience. -->
+            </ul>
+        </nav>
+        <div class="invoice-box">
+            <div id="invoiceContainer"></div>
+        </div>
+    </main>
+    <!--FOOTER SECTION  -->
+    <footer class="footer">
+        &copy; 2025 Slay by Britts
+
+    </footer>
+
+    <!-- Britts.js: contains shared functions like logout() used across pages -->
+    <script src="../Javascript/Britts.js"></script>
+    <script src=" ../Javascript/Invoice.js"></script>
+</body>
+</html>

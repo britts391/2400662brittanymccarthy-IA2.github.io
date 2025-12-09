@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+Name: Yukalia Willisams
+ID: 2406385
+Class: Tuesday UM2 11-1
+
+This HTML page is displayed when a user exceeds the maximum login attempts.
+It informs the user that their account is temporarily locked.
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Account Locked - Slay by Britts</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/signin.css" />
+
+    <style>
+        /* Lock icon styling */
+        .lock-icon {
+            font-size: 60px;
+            color: #ff4444;
+            margin: 20px 0;
+        }
+        /* Countdown timer styling */
+        .countdown {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff4444;
+            margin: 15px 0;
+        }
+        /* Warning box styling */
+        .warning-box {
+            background-color: #ffebee;
+            border: 2px solid #ff4444;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        /* Timer container styling */
+        .timer-container {
+            text-align: center;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        /* Try Again button (hidden by default, shown when timer ends) */
+        #tryAgainBtn {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Website Logo -->
+    <div class="logo">
+        <img src="../Assets/Logo.png" class="logo" alt="Slay by Britts Logo" height="100" width="100" align="left" />
+    </div>
+
+    <!-- Page heading -->
+    <div class="heading">
+        <h1>Account Locked</h1>
+    </div>
+
+    <!-- Main content -->
+    <div class="flex-container">
+        <div class="form-section">
+            <!-- Lock icon -->
+            <div class="lock-icon">🔒</div>
+
+            <h2>Maximum Login Attempts Exceeded</h2>
+            <p>Your account has been temporarily locked for security reasons.</p>
+
+            <!-- Timer display -->
+            <div class="timer-container">
+                <p>Account will unlock in:</p>
+                <div class="countdown" id="countdown">15:00</div>
+                <p>minutes</p>
+            </div>
+
+            <!-- Warning message -->
+            <div class="warning-box">
+                <h3>Security Notice</h3>
+                <p>Multiple failed login attempts detected. This is a security measure to protect your account.</p>
+            </div>
+
+            <!-- Instructions -->
+            <div style="text-align: left; margin: 20px 0;">
+                <h4>What to do:</h4>
+                <ul>
+                    <li>Wait for timer to complete (15 minutes)</li>
+                    <li>Use "Reset Password" if you forgot your password</li>
+                    <li>Contact support if you need immediate help</li>
+                </ul>
+            </div>
+
+            <!-- Buttons -->
+            <!--
+            Try Again button:
+            - Hidden by default with CSS (display: none) and is shown by account-locked.js when timer reaches 0
+            - uses goToLogin() function in account-locked.js
+            -->
+            <div class="buttons">
+                <button type="button" id="tryAgainBtn" onclick="goToLogin()">Try Login Again</button>
+                <!--
+                Home button:
+                - Always visible and sets goToHome() function in account-locked.js
+                -->
+                <button type="button" onclick="goToHome()">Go to Homepage</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">&copy; 2025 Slay by Britts | Account Security</footer>
+
+    <!-- External JavaScript files -->
+    <script src="../Javascript/account-locked.js"></script>
+    <!-- Contain password functions and
+       other shared utilities used across the website -->
+    <script src="../Javascript/Britts.js"></script>
+</body>
+</html>

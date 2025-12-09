@@ -1,0 +1,85 @@
+<!Doctype html>
+<!--
+
+Name: Brittany McCarthy
+ID: 2400662
+Class: Friday UE2 7-9
+-->
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <!-- Ensures text is displayed  correctly across all browsersusing UTF-8 encoding -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Makes the layout responsive by adapting the width to the user's device.
+     "initial-scale=1" ensures proper zoom level when first loaded. -->
+
+<title> Dash board </title>
+<link rel="stylesheet" type="text/css" href="../Stylesheet/Dashboard.css" />
+</head>
+
+<body>
+    <img src="../Assets/Logo.png" alt="image not found" height="100" width="100" class="logo" /><!--Logo image with atrributes along with alt which dispaly a message if image is not found -->
+    <!--  Heading -->
+    <div class="heading">
+        <h1>Dash Board</h1>
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#invoice">Invoices <span class="rotate_emoji">&#128209;</span></a></li>
+            <!-- Navigates to the home page (main dashboard). -->
+
+            <li><a href="#frequency">Frequency <span class="rotate_emoji">&#128202;</span> </a></li> <!-- external section -->
+            <!-- Opens the cart page in a new tab for convenience. -->
+        </ul>
+    </nav>
+    <main>
+
+
+        <div class="flex-container ">
+            <div class="Dashboard-section">
+
+                <!-- Search Invoices -->
+                <section class="search-section">
+                    <h2>Search Invoice</h2>
+
+                    <input type="text" id="searchTRN" placeholder="Enter TRN">
+                    <input type="text" id="searchInvoiceNumber" placeholder="Enter Invoice Number">
+                    <button onclick="SearchInvoice()">Search</button>
+
+                    <div id="searchResult"></div>
+                </section>
+
+                <!-- All Invoices -->
+                <section class="invoice-section" id="invoice">
+                    <h2>All Invoices</h2>
+                    <div id="allInvoicesContainer"></div>
+                </section>
+
+                <!-- User Gender Chart -->
+                <section class="chart-section" id="frequency">
+                    <h2>User Gender Frequency</h2>
+                    <canvas id="genderChart"></canvas>
+                </section>
+
+                <!-- User Age Group Chart -->
+                <section class="chart-section">
+                    <h2>User Age Group Frequency</h2>
+                    <canvas id="ageChart"></canvas>
+                </section>
+            </div>
+        </div>
+    </main>
+    <!--FOOTER SECTION  -->
+    <footer class="footer">
+        &copy; 2025 Slay by Britts
+
+    </footer>
+    <!-- Britts.js: contains shared functions like logout() used across pages -->
+    <script src="../Javascript/Britts.js"></script>
+    <script src="../Javascript/Dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--use for chart-->
+
+</body>
+</html>

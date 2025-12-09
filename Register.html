@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+    Name: Brittany McCarthy(indvidual Assessment)
+    ID: 2400662
+
+    Name: Caleighia Walters(group prohect trn, DOB,gender)
+ID: 2404248
+
+    Class: Friday UE2 7-9
+    Description: This is the Register Page for the “Slay by Britts” website.
+    Purpose: Allows users to create an account by entering their personal details and password.
+    Features:
+      • Form validation (via HTML5 and JavaScript)
+      • Password visibility toggle
+      • External CSS and JS file integration
+      • Responsive and accessible layout
+
+
+
+-->
+
+<html lang="en">
+<head>
+    <!-- Character encoding ensures proper display of text -->
+    <meta charset="UTF-8" />
+
+    <!-- Makes page responsive for all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title appears in the browser tab -->
+    <title>Register Page</title>
+
+    <!-- External icon stylesheet from Font Awesome for button icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- External CSS file that styles the register page -->
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/register.css" />
+</head>
+
+<body>
+    <!-- Website Logo (aligned left) -->
+
+    <img src="../Assets/Logo.png" class="logo " alt="Image not found" height="100" width="100" align="left" />
+
+
+    <!-- Heading section with bounce animation (defined in CSS) -->
+    <div class="heading">
+        <h1>Register Now !!!</h1>
+    </div>
+
+    <!-- Name: Caleighia Walters
+        ID: 2404248
+        Class: Friday UE2 7-9
+        -->
+    <!-- Container using Flexbox to align the form properly -->
+    <div class="flex-container">
+
+        <!-- Left section holds the registration form -->
+        <div class="form-section">
+            <h2>Please fill in your details:</h2>
+
+            <form id="registerForm">
+                <!-- Row: First and Last Name -->
+                <div class="row">
+                    <div class="field">
+                        <label for="FirstName">First Name</label>
+                        <input type="text" id="FirstName" placeholder="First name" required maxlength="30">
+                    </div>
+                    <div class="field">
+                        <label for="LastName">Last Name</label>
+                        <input type="text" id="LastName" placeholder="Last name" required maxlength="30">
+                    </div>
+                </div>
+
+                <!-- Row: Date of Birth and Gender -->
+                <div class="row">
+                    <div class="field">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                    <div class="field">
+                        <label for="gender">Gender</label>
+                        <select id="gender" required>
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Row: Phone and Email -->
+                <div class="row">
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="e.g., 8761234567" required pattern="[0-9]{10}" maxlength="10">
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Email" maxlength="50" required>
+                    </div>
+                </div>
+
+                <!-- Row: TRN -->
+                <div class="row">
+                    <div class="field">
+                        <label for="trn">Tax Registration Number (TRN)</label>
+                        <input type="text" id="trn" placeholder="000-000-000" required pattern="\d{3}-\d{3}-\d{3}">
+                    </div>
+                </div>
+
+                <!-- Password creation and confirmation fields -->
+                <div class="row">
+                    <div class="field">
+                        <label for="password">Create Password</label>
+                        <input type="password" id="password" required><br />
+                        <!-- Checkbox calls togglePassword() function to show/hide password -->
+                        <input type="checkbox" onclick="Password('password')"> Show
+                    </div>
+
+                    <div class="field">
+                        <label for="confirmPassword">Re-enter Password</label>
+                        <input type="password" id="confirmPassword" required><br />
+                        <input type="checkbox" onclick="Password('confirmPassword')"> Show
+                    </div>
+                    </div>
+                    <!-- Button Section -->
+                    <div class="buttons">
+                        <button type="button" onclick="save()">Register <i class="fa fa-save"></i></button>
+                        <button type="button" onclick="clearForm()">Cancel <i class="fa fa-times"></i></button>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 Slay by Britts</p>
+    </footer>
+
+    <!-- Linking external JavaScript files -->
+    <!-- register.js handles form validation and data saving -->
+    <script src="../Javascript/register.js"></script>
+
+    <!-- Britts.js may contain shared site-wide functionality (e.g., togglePassword) -->
+    <script src="../Javascript/Britts.js"></script>
+
+</body>
+</html>
+

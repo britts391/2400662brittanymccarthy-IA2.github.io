@@ -1,0 +1,71 @@
+<!--
+Name: Brittany McCarthy, T'shara Shaw, Caleighia Walters, Yukalia Williams 
+Class: Friday UE2 7-9pm
+Product Catalog - Updated to match existing theme
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Catalog - Slay by Britts</title>
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/britts.css" />
+    <link rel="stylesheet" type="text/css" href="../Stylesheet/product_catalog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <img src="../Assets/Logo.png" alt="image not found" height="100" width="100" class="logo" />
+
+    <div class="heading">
+        <h1>Product Catalog</h1>
+        <p>Browse our selection of party packages</p>
+    </div>
+
+    <main>
+        <button onclick="logout()">Logout</button>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="SlayByBritts.html">Home<span class="rotate_emoji">&#127969;</span></a></li>
+                <li><a href="cart.html">View cart <span class="rotate_emoji">&#x1f6d2;</span></a></li>
+                <li><a href="custom.html">Custom Package</a></li>
+                
+            </ul>
+        </nav>
+
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <button class="category-btn active" onclick="filterProducts('all')">All Packages</button>
+            <button class="category-btn" onclick="filterProducts('Baby Shower')">Baby Shower</button>
+            <button class="category-btn" onclick="filterProducts('Birthday')">Birthday</button>
+            <button class="category-btn" onclick="filterProducts('Wedding')">Wedding</button>
+        </div>
+
+        <!-- Products will be loaded here -->
+        <div id="productsContainer" class="products-container">
+            <!-- Products loaded dynamically from JavaScript -->
+        </div>
+
+        <!-- Quick cart summary -->
+        <div class="view-cart-container">
+            <a href="cart.html" class="view-cart-link">View Full Cart →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer - matches your theme -->
+    <footer>
+        <p>&copy; 2025 Slay by Britts</p>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <!-- JavaScript Files -->
+    <script src="../Javascript/Britts.js"></script>
+    <script src="../Javascript/products.js"></script>
+    <script src="../Javascript/product_catalog.js"></script>
+</body>
+</html>

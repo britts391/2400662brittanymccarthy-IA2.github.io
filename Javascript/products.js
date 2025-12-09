@@ -22,23 +22,23 @@ const allProducts =
         name: "Baby Shower Packages",
         price: 170000, 
         description: "Beautiful baby shower themes including Baby Bear and Winnie the Pooh.",
-        image: "Assets/babyshowerpackagecover.jpg",
+        image:"Assets/babyshowerpackagecover.jpg",
         category: "Baby Shower"
     },
     {
         id: 2,
-        name: "Birthday Packages",
+        name:"Birthday Packages",
         price: 65000, 
         description: "Simple and extravagant birthday packages.",
-        image: "Assets/birthdaypackagecover.jpg",
-        category: "Birthday"
+        image:"Assets/birthdaypackagecover.jpg",
+        category:"Birthday"
     },
     {
         id: 3,
-        name: "Wedding Packages",
-        price: 250000,
+        name:"Wedding Packages",
+        price:250000,
         description: "Elegant wedding packages including Pink Blossom, Classic, and Blinding Lights.",
-        image: "Assets/weddingpackagecover.jpg",
+        image:"Assets/weddingpackagecover.jpg",
         category: "Wedding"
     }
 ];
@@ -62,3 +62,4 @@ function getAllProducts()
 // Initialize on page load
 
 initializeProducts();
+

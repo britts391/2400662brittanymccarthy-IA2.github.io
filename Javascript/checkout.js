@@ -362,7 +362,7 @@ Optionally, display a message indicating that the invoice has been “sent” to
     alert("Checkout confirmed! Thank you for your purchase. Invoice will be sent to your email"); // Shows a confirmation message.
     
 
-    window.location.href = "../Codes/SlayByBritts.html"; //Redirects the user home  page.
+    window.location.href = "SlayByBritts.html"; //Redirects the user home  page.
 }
 
 
@@ -381,7 +381,7 @@ function cancelCheckout() {
 
         alert("Checkout cancelled. Returning to cart page.");//Displays a message to the user confirming that the checkout was cancelled.
         //This is a feedback mechanism to reassure the user that their action was successful.
-        window.location.href = "../Codes/cart.html"; //  redirect to cart page 
+        window.location.href = "cart.html"; //  redirect to cart page 
     }
 }
 
@@ -398,4 +398,5 @@ function clearCheckout() {
     window.location.reload(); // Reload DOM Reloads the current page.
     //This ensures that any UI elements or scripts that depend on checkoutItems are refreshed and updated.
 }
+
 

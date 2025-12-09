@@ -89,7 +89,7 @@ function login() {
             
 
             // Redirect to lock-out error page
-            window.location.href = "AccountLocked.html";
+            window.location.href = "Accountlocked.html";
         }
         else {
             alert(`Incorrect TRN or password. Attempts left: ${3 - attempts}`);
@@ -131,3 +131,4 @@ document.getElementById("trn").addEventListener("input", function (e) {
     e.target.value = digits;
 
 });
+

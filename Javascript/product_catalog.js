@@ -177,9 +177,9 @@ function addSimpleToCart(productId) {
     updateCartSummary();
 }
 
-// Update cart summary (if you add a cart summary section later)
+// Update cart summary
 function updateCartSummary() {
-    // This function can be expanded if you add a cart summary to this page
+    
     const currentUser = localStorage.getItem("currentUser");
     const cart = JSON.parse(localStorage.getItem("cart")) || {};
     const userCart = cart[currentUser] || [];
@@ -220,3 +220,4 @@ document.addEventListener('DOMContentLoaded', function() {
         loadProducts();
     }
 });
+

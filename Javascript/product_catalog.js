@@ -137,7 +137,7 @@ function addSimpleToCart(productId) {
     if (!currentUser) {
         showNotification("Please login to add items to cart", "error");
         setTimeout(() => {
-            window.location.href = "signin.html";
+            window.location.href = "Signin.html";
         }, 1500);
         return;
     }
@@ -221,5 +221,6 @@ document.addEventListener('DOMContentLoaded', function() {
         loadProducts();
     }
 });
+
 
 

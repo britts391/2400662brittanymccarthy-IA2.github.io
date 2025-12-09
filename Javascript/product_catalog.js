@@ -11,7 +11,7 @@ Create an array of product objects in JavaScript. Each product should have:
 `image`
 An updated product list must be kept on localStorage, as AllProducts. 
 Display the product list dynamically on the website. 
-Each product should have an “Add to Cart” button.
+Each product should have an â€œAdd to Cartâ€ button.
 
 */
 

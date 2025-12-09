@@ -11,7 +11,7 @@ Create an array of product objects in JavaScript. Each product should have:
 `image`
 An updated product list must be kept on localStorage, as AllProducts. 
 Display the product list dynamically on the website. 
-Each product should have an ìAdd to Cartî button.
+Each product should have an ‚ÄúAdd to Cart‚Äù button.
 
 */
 
@@ -22,7 +22,7 @@ const allProducts =
         name: "Baby Shower Packages",
         price: 170000, 
         description: "Beautiful baby shower themes including Baby Bear and Winnie the Pooh.",
-        image: "../Assets/babyshowerpackagecover.jpg",
+        image: "Assets/babyshowerpackagecover.jpg",
         category: "Baby Shower"
     },
     {
@@ -30,7 +30,7 @@ const allProducts =
         name: "Birthday Packages",
         price: 65000, 
         description: "Simple and extravagant birthday packages.",
-        image: "../Assets/birthdaypackagecover.jpg",
+        image: "Assets/birthdaypackagecover.jpg",
         category: "Birthday"
     },
     {
@@ -38,7 +38,7 @@ const allProducts =
         name: "Wedding Packages",
         price: 250000,
         description: "Elegant wedding packages including Pink Blossom, Classic, and Blinding Lights.",
-        image: "../Assets/weddingpackagecover.jpg",
+        image: "Assets/weddingpackagecover.jpg",
         category: "Wedding"
     }
 ];
@@ -60,4 +60,5 @@ function getAllProducts()
 }
 
 // Initialize on page load
+
 initializeProducts();

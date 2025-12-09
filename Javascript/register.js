@@ -215,7 +215,7 @@ function save() {
         localStorage.setItem("RegistrationData", JSON.stringify(RegistrationData));
 
         alert("Registration successful!");
-        window.location.href = "Login.html"; // Redirect
+        window.location.href = "index.html"; // Redirect
     }
 }
 
@@ -253,3 +253,4 @@ document.getElementById("trn").addEventListener("input", function (e) {
     e.target.value = digits;
 
 });
+

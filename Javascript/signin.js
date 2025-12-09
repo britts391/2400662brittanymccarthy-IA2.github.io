@@ -76,7 +76,7 @@ function login() {
         attempts = 0;
 
         // Redirect user to product catalog page (IA Integration)
-        window.location.href = "../Codes/SlayByBritts.html";
+        window.location.href = "SlayByBritts.html";
     }
 
     // FAILED LOGIN
@@ -89,7 +89,7 @@ function login() {
             
 
             // Redirect to lock-out error page
-            window.location.href = "../Codes/AccountLocked.html";
+            window.location.href = "AccountLocked.html";
         }
         else {
             alert(`Incorrect TRN or password. Attempts left: ${3 - attempts}`);
@@ -129,4 +129,5 @@ document.getElementById("trn").addEventListener("input", function (e) {
 
     // Update field with formatted value
     e.target.value = digits;
+
 });

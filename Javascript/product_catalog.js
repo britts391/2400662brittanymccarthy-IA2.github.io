@@ -92,7 +92,8 @@ function displayProducts(products) {
 }
 
 // Filter products by category
-function filterProducts(category) {
+function  filterProducts(category, event) 
+ {
     // Update active button
     const buttons = document.querySelectorAll('.category-btn');
     buttons.forEach(btn => {
@@ -220,4 +221,5 @@ document.addEventListener('DOMContentLoaded', function() {
         loadProducts();
     }
 });
+
 

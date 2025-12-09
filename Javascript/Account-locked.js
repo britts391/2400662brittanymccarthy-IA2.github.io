@@ -92,10 +92,11 @@ function unlockAccount(countdownElement) {
 
 // Function to navigate to login page
 function goToLogin() {
-    window.location.href = "../Codes/SignIn.html";
+    window.location.href = "SignIn.html";
 }
 
 // Function to navigate to homepage
 function goToHome() {
-    window.location.href = "../Codes/Login.html";
+    window.location.href = "index.html";
+
 }
